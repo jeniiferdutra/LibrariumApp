@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D061F0742DB09A1D009078FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D061F0732DB09A1D009078FF /* FirebaseAuth */; };
+		D061F0762DB09A1D009078FF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D061F0752DB09A1D009078FF /* FirebaseCrashlytics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D0BE43C32DAF435B0048F391 /* LibrariumApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibrariumApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D061F0742DB09A1D009078FF /* FirebaseAuth in Frameworks */,
+				D061F0762DB09A1D009078FF /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = LibrariumApp;
 			packageProductDependencies = (
+				D061F0732DB09A1D009078FF /* FirebaseAuth */,
+				D061F0752DB09A1D009078FF /* FirebaseCrashlytics */,
 			);
 			productName = LibrariumApp;
 			productReference = D0BE43C32DAF435B0048F391 /* LibrariumApp.app */;
@@ -107,6 +116,9 @@
 			);
 			mainGroup = D0BE43BA2DAF435B0048F391;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D061F0722DB09A1D009078FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D0BE43C42DAF435B0048F391 /* Products */;
 			projectDirPath = "";
@@ -145,6 +157,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LibrariumApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -176,6 +189,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LibrariumApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -341,6 +355,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D061F0722DB09A1D009078FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D061F0732DB09A1D009078FF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D061F0722DB09A1D009078FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D061F0752DB09A1D009078FF /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D061F0722DB09A1D009078FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0BE43BB2DAF435B0048F391 /* Project object */;
 }
