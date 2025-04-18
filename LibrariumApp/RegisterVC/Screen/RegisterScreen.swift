@@ -9,6 +9,7 @@ import UIKit
 
 protocol RegisterScreenProtocol: AnyObject {
     func tappedLoginButton()
+    func tappedRegisterButton()
 }
 
 class RegisterScreen: UIView {
@@ -52,7 +53,7 @@ class RegisterScreen: UIView {
         email.backgroundColor = .white
         email.borderStyle = .none
         email.borderStyle = .roundedRect
-        email.keyboardType = .emailAddress
+        email.keyboardType = .default
         email.placeholder = "Your name"
         email.textColor = .darkGray
         email.layer.borderWidth = 0.2
@@ -120,10 +121,14 @@ class RegisterScreen: UIView {
         btn.setTitleColor(.white, for: .normal)
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 25
-        btn.backgroundColor = .black
-        // ADD TARGET
+        btn.backgroundColor = .lightGray
+        btn.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedRegisterButton() {
+        self.delegate?.tappedRegisterButton()
+    }
     
     lazy var loginLabel: UILabel = {
         let register = UILabel()
@@ -220,5 +225,11 @@ class RegisterScreen: UIView {
             loginButton.leadingAnchor.constraint(equalTo: registerLabel.leadingAnchor)
             
         ])
+    }
+    
+    public func configTextField(delegate: UITextFieldDelegate) {
+        nameTextField.delegate = delegate
+        emailTextField.delegate = delegate
+        passwordTextField.delegate = delegate
     }
 }
