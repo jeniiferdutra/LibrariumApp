@@ -10,6 +10,6 @@ import UIKit
 class HomeViewModel {
 
     public var numberOfRows: Int {
-        return 3
+        return 5
     }
 }

@@ -12,7 +12,8 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.backgroundColor = .green
+        table.backgroundColor = .clear
+        table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         return table
     }()
     
@@ -23,6 +24,7 @@ class HomeScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         addSubview(tableView)
         configElements()
     }

@@ -16,8 +16,7 @@ class CustomTableViewCellScreen: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
-        // TO DO REGISTER
-        cv.backgroundColor = .darkGray
+        cv.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         return cv
     }()
     
