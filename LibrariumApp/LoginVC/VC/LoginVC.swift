@@ -31,7 +31,9 @@ class LoginVC: UIViewController {
 
 extension LoginVC: LoginScreenProtocol {
     func tappedLoginButton() {
-        
+        let vc: HomeVC = HomeVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func tappedRegisterButton() {
