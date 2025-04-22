@@ -10,11 +10,10 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
     
     static let identifier: String = "CustomTableViewCell"
-    private var books: [Books] = []
+    private var viewModel: HomeTableViewModel?
     private var category: BookCategory?
 
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
-    //private var viewModel: HomeTableViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,11 +30,17 @@ class CustomTableViewCell: UITableViewCell {
         homeScreen.pin(to: contentView)
     }
     
+    // Configura a célula com os dados da categoria
     public func setupCell(with category: BookCategory) {
         self.category = category
         homeScreen.categoryLabel.text = category.genre
         homeScreen.collectionView.reloadData()
     }
+    
+    // A célula agora usa a ViewModel para configurar os livros
+        private func setupBookCell(with book: Books) {
+            self.viewModel = HomeTableViewModel(book: book)
+        }
 
 }
 
@@ -52,6 +57,7 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         }
 
         let book = category.books[indexPath.row]
+        setupBookCell(with: book)  // Configura o viewModel com os dados do livro
         cell.setupCell(book: book, categoryName: category.genre)
         return cell
     }

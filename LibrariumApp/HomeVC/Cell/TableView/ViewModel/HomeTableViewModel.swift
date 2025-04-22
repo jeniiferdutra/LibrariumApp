@@ -9,20 +9,13 @@ import UIKit
 
 class HomeTableViewModel {
 
-    private var books = [
-        Books(imageURL: "outlander"),
-        Books(imageURL: "codigo"),
-        Books(imageURL: "game"),
-        Books(imageURL: "iluminado"),
-        Books(imageURL: "anjos")
-    ]
-        
-    public var getListBooks: [Books] {
-        return books
-    }
+    private var book: Books
 
-    public var numberOfRows: Int {
-        return books.count
-    }
+        init(book: Books) {
+            self.book = book
+        }
 
+        var imageURL: String {
+            return book.imageURL
+        }
 }

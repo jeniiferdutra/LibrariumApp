@@ -58,19 +58,19 @@ class HomeScreen: UIView {
         NSLayoutConstraint.activate([
             
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                    logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                    logoImageView.heightAnchor.constraint(equalToConstant: 110),
-                    logoImageView.widthAnchor.constraint(equalToConstant: 260),
+            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 110),
+            logoImageView.widthAnchor.constraint(equalToConstant: 260),
 
-                    searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 5),
-                    searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                    searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-                    searchTextField.heightAnchor.constraint(equalToConstant: 40),
+            searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
+            searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            searchTextField.heightAnchor.constraint(equalToConstant: 40),
 
-                    tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 16),
-                    tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                    tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                    tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
