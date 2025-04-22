@@ -10,3 +10,8 @@ import UIKit
 struct Books {
     var imageURL: String
 }
+
+struct BookCategory {
+    var genre: String
+    var books: [Books]
+}

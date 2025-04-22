@@ -27,8 +27,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
             homeScreen.pin(to: contentView)
         }
     
-    public func setupCell(data: Books) {
-        homeScreen.bookImageView.image = UIImage(named: data.imageURL)
+    public func setupCell(book: Books) {
+        homeScreen.bookImageView.image = UIImage(named: book.imageURL)
     }
     
 }

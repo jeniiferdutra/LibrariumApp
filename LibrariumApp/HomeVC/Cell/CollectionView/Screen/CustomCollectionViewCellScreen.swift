@@ -11,8 +11,7 @@ class CustomCollectionViewCellScreen: UIView {
     
     lazy var cardView: UIView = {
         let view = UIView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -39,15 +38,15 @@ class CustomCollectionViewCellScreen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            cardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
-            cardView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant:  -10),
-            cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            cardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            cardView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            bookImageView.topAnchor.constraint(equalTo: topAnchor),
-            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bookImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bookImageView.heightAnchor.constraint(equalToConstant: 210)
+            bookImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            bookImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            bookImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            bookImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
         ])
     }
 }
