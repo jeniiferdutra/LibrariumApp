@@ -34,12 +34,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
         
         let category = viewModel.category(at: indexPath.row)
-        cell?.setupCell(with: category.books)
+        cell?.setupCell(with: category)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 235
+        return 290
     }
     
 }

@@ -26,6 +26,7 @@ class CustomCollectionViewCellScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .appBackGroud
         addSubview(cardView)
         cardView.addSubview(bookImageView)
         configConstraints()

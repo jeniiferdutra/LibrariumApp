@@ -21,7 +21,7 @@ class HomeViewModel {
             Books(imageURL: "asa"),
             Books(imageURL: "hobbit"),
             Books(imageURL: "rainha"),
-            Books(imageURL: "gameOfThrones"),
+            Books(imageURL: "game"),
             Books(imageURL: "duna"),
             Books(imageURL: "vorazes"),
             Books(imageURL: "principe")

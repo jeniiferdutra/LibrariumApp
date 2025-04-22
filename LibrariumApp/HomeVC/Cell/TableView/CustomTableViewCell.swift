@@ -11,9 +11,10 @@ class CustomTableViewCell: UITableViewCell {
     
     static let identifier: String = "CustomTableViewCell"
     private var books: [Books] = []
-    
+    private var category: BookCategory?
+
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
-    private var viewModel: HomeTableViewModel?
+    //private var viewModel: HomeTableViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,27 +31,33 @@ class CustomTableViewCell: UITableViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(with books: [Books]) {
-        self.books = books
-        homeScreen.collectionView.reloadData()// Atualiza a collectionView com os novos dados
+    public func setupCell(with category: BookCategory) {
+        self.category = category
+        homeScreen.categoryLabel.text = category.genre
+        homeScreen.collectionView.reloadData()
+    }
 
-        }
 }
 
 
 extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return books.count
+        return category?.books.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell
-        cell?.setupCell(book: books[indexPath.row])
-        return cell ?? UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell,
+              let category = category else {
+            return UICollectionViewCell()
+        }
+
+        let book = category.books[indexPath.row]
+        cell.setupCell(book: book, categoryName: category.genre)
+        return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 160, height: 240)
+        return CGSize(width: 150, height: 230) 
     }
     
 }

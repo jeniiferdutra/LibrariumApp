@@ -10,11 +10,22 @@ import UIKit
 class HomeScreen: UIView {
     
     lazy var logoImageView: UIImageView = {
-        let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage(named: "logo2")
-        img.contentMode = .scaleAspectFit
-        return img
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "logo2")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    lazy var searchTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Search"
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = .white
+        textField.textColor = .black
+        return textField
     }()
     
     lazy var tableView: UITableView = {
@@ -32,9 +43,10 @@ class HomeScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+        backgroundColor = .appBackGroud
+        addSubview(logoImageView)
+        addSubview(searchTextField)
         addSubview(tableView)
-        tableView.addSubview(logoImageView)
         configElements()
     }
     
@@ -46,14 +58,19 @@ class HomeScreen: UIView {
         NSLayoutConstraint.activate([
             
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 220),
-            logoImageView.heightAnchor.constraint(equalToConstant: 110),
-            
-            tableView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                    logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                    logoImageView.heightAnchor.constraint(equalToConstant: 110),
+                    logoImageView.widthAnchor.constraint(equalToConstant: 260),
+
+                    searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 5),
+                    searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                    searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                    searchTextField.heightAnchor.constraint(equalToConstant: 40),
+
+                    tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 16),
+                    tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                    tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                    tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
