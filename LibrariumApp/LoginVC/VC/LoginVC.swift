@@ -10,6 +10,7 @@ import UIKit
 class LoginVC: UIViewController {
     
     private var loginScreen: LoginScreen?
+    private var viewModel: LoginViewModel = LoginViewModel()
     
     override func loadView() {
         loginScreen = LoginScreen()
@@ -26,14 +27,15 @@ class LoginVC: UIViewController {
         loginScreen?.configTextFields(delegate: self)
     }
 
-
 }
 
 extension LoginVC: LoginScreenProtocol {
     func tappedLoginButton() {
-        let vc: HomeVC = HomeVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        let vc: HomeVC = HomeVC()
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
+        
+        viewModel.login(email: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "")
     }
     
     func tappedRegisterButton() {
