@@ -16,6 +16,6 @@ class HomeTableViewModel {
         }
 
         var imageURL: String {
-            return book.imageURL
+            return book.imageURL ?? ""
         }
 }

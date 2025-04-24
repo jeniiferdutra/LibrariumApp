@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct Books {
-    var imageURL: String
+struct Books: Codable {
+    var imageURL: String?
 }
 
-struct BookCategory {
-    var genre: String
-    var books: [Books]
+struct BookCategory: Codable {
+    var genre: String?
+    var books: [Books]?
 }

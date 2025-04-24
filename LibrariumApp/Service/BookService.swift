@@ -13,12 +13,14 @@ class BookService {
     
     // MARK: Decodificar um Json para converter para objeto
     
-    func getBookDataJson(completion: @escaping (BookCategory?, Error?) -> Void) {
+    func getBookDataJson(completion: @escaping (BookData?, Error?) -> Void) {
         if let url = Bundle.main.url(forResource: "BookData", withExtension: "json") { // Buscar a URL
             do {
                 let data = try Data(contentsOf: url) // Convertendo o json em dado binário
+                let bookData: BookData = try JSONDecoder().decode(BookData.self, from: data)
+                completion(bookData, nil)
             } catch {
-                
+                completion(nil, error) 
             }
         }
     }

@@ -28,7 +28,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         }
     
     public func setupCell(book: Books, categoryName: String) {
-        homeScreen.bookImageView.image = UIImage(named: book.imageURL)
+        homeScreen.bookImageView.image = UIImage(named: book.imageURL ?? "")
     }
 
     
