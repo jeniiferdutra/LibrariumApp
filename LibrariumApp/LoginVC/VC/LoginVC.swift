@@ -25,16 +25,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         loginScreen?.delegate(delegate: self)
         loginScreen?.configTextFields(delegate: self)
+        viewModel.delegate(delegate: self)
     }
 
 }
 
 extension LoginVC: LoginScreenProtocol {
     func tappedLoginButton() {
-//        let vc: HomeVC = HomeVC()
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
-        
         viewModel.login(email: loginScreen?.emailTextField.text ?? "", password: loginScreen?.passwordTextField.text ?? "")
     }
     
@@ -42,6 +39,21 @@ extension LoginVC: LoginScreenProtocol {
         let vc = RegisterVC()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+}
+
+extension LoginVC: LoginViewModelProtocol {
+    func sucessLogin() {
+        let vc: HomeVC = HomeVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func errorLogin(errorMessage: String) { // MARK: Ter um alert de informaçao
+        print(#function)
+        Alert(controller: self).showAlertInformation(title: "Ops, error Login!", message: errorMessage)
+    }
+    
     
 }
 
