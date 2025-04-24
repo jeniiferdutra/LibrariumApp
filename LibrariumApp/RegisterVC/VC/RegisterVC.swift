@@ -10,6 +10,7 @@ import UIKit
 class RegisterVC: UIViewController {
     
     private var registerScreen: RegisterScreen?
+    private var viewModel: RegisterViewModel = RegisterViewModel()
     
     override func loadView() {
         registerScreen = RegisterScreen()
@@ -20,20 +21,35 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
         registerScreen?.delegate(delegate: self)
         registerScreen?.configTextField(delegate: self)
+        viewModel.delegate(delegate: self)
+
     }
 
 }
 
 extension RegisterVC: RegisterScreenProtocol {
     func tappedRegisterButton() {
-        let vc: HomeVC = HomeVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "")
     }
     
     func tappedLoginButton() {
         navigationController?.popViewController(animated: true)
     }
+    
+}
+
+extension RegisterVC: RegisterViewModelProtocol {
+    func sucessRegister() {
+        let vc: HomeVC = HomeVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func errorRegister(errorMessage: String) {
+        print(#function)
+        Alert(controller: self).showAlertInformation(title: "Ops, error Register!", message: errorMessage)
+    }
+    
     
 }
 
@@ -50,7 +66,7 @@ extension RegisterVC: UITextFieldDelegate {
             registerScreen?.registerButton.backgroundColor = .black
         } else {
             registerScreen?.registerButton.isEnabled = false
-            registerScreen?.registerButton.backgroundColor = .black
+            registerScreen?.registerButton.backgroundColor = .lightGray
         }
     }
     
