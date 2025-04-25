@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewModel {
     
+    private var service: BookService = BookService()
     private var categories: [BookCategory] = []
         
     init() {
@@ -16,31 +17,7 @@ class HomeViewModel {
     }
     
     private func loadMockData() {
-        categories = [
-            BookCategory(genre: "Fantasia", books: [
-            Books(imageURL: "asa"),
-            Books(imageURL: "hobbit"),
-            Books(imageURL: "rainha"),
-            Books(imageURL: "game"),
-            Books(imageURL: "duna"),
-            Books(imageURL: "vorazes"),
-            Books(imageURL: "principe")
-        ]),
-            BookCategory(genre: "Romance", books: [
-                Books(imageURL: "hoover"),
-                Books(imageURL: "john"),
-                Books(imageURL: "dia"),
-                Books(imageURL: "honra"),
-                Books(imageURL: "outlander")
-            ]),
-            BookCategory(genre: "Terror", books: [
-                Books(imageURL: "it"),
-                Books(imageURL: "iluminado"),
-                Books(imageURL: "paciente"),
-                Books(imageURL: "misery"),
-                Books(imageURL: "giz")
-            ])
-        ]
+        categories = [BookCategory]()
     }
     
     public func numberOfCategories() -> Int {
@@ -49,6 +26,14 @@ class HomeViewModel {
     
     func category(at index: Int) -> BookCategory {
         return categories[index]
+    }
+    
+    public func fetchAllRequest() {
+        service.getBookDataJson { bookData, error in
+            if error == nil { // se nao existe erro
+                self.categories = bookData?.categories ?? [] 
+            }
+        }
     }
 
 }

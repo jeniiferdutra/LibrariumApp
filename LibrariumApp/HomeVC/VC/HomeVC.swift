@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeScreen?.configTableView(delegate: self, dataSource: self)
+        viewModel.fetchAllRequest()
     }
 
 }

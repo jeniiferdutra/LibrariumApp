@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "genre": "Fantasia",
+      "books": [
+        { "imageURL": "asa" },
+        { "imageURL": "hobbit" },
+        { "imageURL": "rainha" },
+        { "imageURL": "game" },
+        { "imageURL": "duna" },
+        { "imageURL": "vorazes" },
+        { "imageURL": "principe" }
+      ]
+    },
+    {
+      "genre": "Romance",
+      "books": [
+        { "imageURL": "hoover" },
+        { "imageURL": "john" },
+        { "imageURL": "dia" },
+        { "imageURL": "honra" },
+        { "imageURL": "outlander" }
+      ]
+    },
+    {
+      "genre": "Terror",
+      "books": [
+        { "imageURL": "it" },
+        { "imageURL": "iluminado" },
+        { "imageURL": "paciente" },
+        { "imageURL": "misery" },
+        { "imageURL": "giz" }
+      ]
+    }
+  ]
+}
+

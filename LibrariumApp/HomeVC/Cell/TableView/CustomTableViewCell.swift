@@ -47,7 +47,7 @@ class CustomTableViewCell: UITableViewCell {
 
 extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return category?.books.count ?? 0
+        return category?.books?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,9 +56,13 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
 
-        let book = category.books[indexPath.row]
-        setupBookCell(with: book)  // Configura o viewModel com os dados do livro
-        cell.setupCell(book: book, categoryName: category.genre)
+        let book = category.books?[indexPath.row]
+        
+        // Configura o viewModel com os dados do livro
+        setupBookCell(with: book ?? Books(imageURL: "")) // Passa o objeto Books
+
+        // Configura a célula com o livro e o nome da categoria
+        cell.setupCell(book: book ?? Books(imageURL: ""), categoryName: category.genre ?? "")
         return cell
     }
 
