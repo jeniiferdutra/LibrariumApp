@@ -7,10 +7,21 @@
 
 import UIKit
 
+protocol HomeViewModelProtocol: AnyObject {
+    func success()
+    func error()
+}
+
 class HomeViewModel {
     
     private var service: BookService = BookService()
     private var categories: [BookCategory] = []
+    
+    private weak var delegate: HomeViewModelProtocol?
+    
+    public func delegate(delegate: HomeViewModelProtocol?) {
+        self.delegate = delegate
+    }
         
     init() {
         loadMockData()
@@ -29,9 +40,12 @@ class HomeViewModel {
     }
     
     public func fetchAllRequest() {
-        service.getBookDataJson { bookData, error in
+        service.getBookDataURLSession { bookData, error in
             if error == nil { // se nao existe erro
-                self.categories = bookData?.categories ?? [] 
+                self.categories = bookData?.categories ?? []
+                self.delegate?.success()
+            } else {
+                self.delegate?.error()
             }
         }
     }

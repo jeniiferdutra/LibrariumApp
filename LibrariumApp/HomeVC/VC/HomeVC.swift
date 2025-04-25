@@ -19,10 +19,24 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeScreen?.configTableView(delegate: self, dataSource: self)
+        viewModel.delegate(delegate: self)
         viewModel.fetchAllRequest()
     }
 
+}
+
+extension HomeVC: HomeViewModelProtocol {
+    func success() {
+        DispatchQueue.main.async {// Executa o código dentro do closure na thread principal
+            self.homeScreen?.configTableView(delegate: self, dataSource: self)// Atualiza a interface de usuário configurando a TableView
+        }
+    }
+    
+    func error() {
+        print(#function)
+    }
+    
+    
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
