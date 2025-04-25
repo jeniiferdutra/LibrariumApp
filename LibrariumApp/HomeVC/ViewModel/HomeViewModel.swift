@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewModel {
     
+    private var service: BookService = BookService()
     private var categories: [BookCategory] = []
         
     init() {
@@ -25,6 +26,14 @@ class HomeViewModel {
     
     func category(at index: Int) -> BookCategory {
         return categories[index]
+    }
+    
+    public func fetchAllRequest() {
+        service.getBookDataJson { bookData, error in
+            if error == nil { // se nao existe erro
+                self.categories = bookData?.categories ?? [] 
+            }
+        }
     }
 
 }
