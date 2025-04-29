@@ -50,4 +50,11 @@ class CustomCollectionViewCellScreen: UIView {
             bookImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
         ])
     }
+    
+    // MARK: - Acessibilidade
+        public func configureAccessibility(with title: String) {
+            bookImageView.isAccessibilityElement = true
+            bookImageView.accessibilityLabel = "Capa do livro \(title)"
+            bookImageView.accessibilityTraits = .image
+        }
 }

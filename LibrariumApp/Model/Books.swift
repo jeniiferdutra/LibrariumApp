@@ -8,7 +8,7 @@
 import UIKit
 
 struct Books: Codable {
-    var imageURL: String?
+    var imageURL, title: String?
 }
 
 struct BookCategory: Codable {

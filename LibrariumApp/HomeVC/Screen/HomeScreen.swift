@@ -15,6 +15,10 @@ class HomeScreen: UIView {
         imageView.image = UIImage(named: "logo2")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityLabel = "Librarium App"
+        imageView.accessibilityTraits = .staticText
         return imageView
     }()
     

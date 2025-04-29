@@ -3,35 +3,34 @@
     {
       "genre": "Fantasia",
       "books": [
-        { "imageURL": "asa" },
-        { "imageURL": "hobbit" },
-        { "imageURL": "rainha" },
-        { "imageURL": "game" },
-        { "imageURL": "duna" },
-        { "imageURL": "vorazes" },
-        { "imageURL": "principe" }
+        { "imageURL": "asa", "title": "Quarta Asa" },
+        { "imageURL": "hobbit", "title": "O Hobbit" },
+        { "imageURL": "rainha", "title": "A Rainha Vermelha" },
+        { "imageURL": "game", "title": "Game of Thrones" },
+        { "imageURL": "duna", "title": "Duna" },
+        { "imageURL": "vorazes", "title": "Jogos Vorazes" },
+        { "imageURL": "principe", "title": "O Príncipe Cruel" }
       ]
     },
     {
       "genre": "Romance",
       "books": [
-        { "imageURL": "hoover" },
-        { "imageURL": "john" },
-        { "imageURL": "dia" },
-        { "imageURL": "honra" },
-        { "imageURL": "outlander" }
+        { "imageURL": "hoover", "title": "É Assim que Acaba" },
+        { "imageURL": "john", "title": "Querido John" },
+        { "imageURL": "dia", "title": "Um dia" },
+        { "imageURL": "honra", "title": "A Honra" },
+        { "imageURL": "outlander", "title": "Outlander" }
       ]
     },
     {
       "genre": "Terror",
       "books": [
-        { "imageURL": "it" },
-        { "imageURL": "iluminado" },
-        { "imageURL": "paciente" },
-        { "imageURL": "misery" },
-        { "imageURL": "giz" }
+        { "imageURL": "it", "title": "It: A Coisa" },
+        { "imageURL": "iluminado", "title": "O Iluminado" },
+        { "imageURL": "paciente", "title": "O Paciente" },
+        { "imageURL": "misery", "title": "Misery: Louca Obsessão" },
+        { "imageURL": "giz", "title": "O Homem de Giz" }
       ]
     }
   ]
 }
-
