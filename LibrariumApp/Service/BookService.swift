@@ -19,7 +19,7 @@ class BookService {
     
     func getBookDataURLSession(completion: @escaping (BookData?, Error?) -> Void) {
         // URL da API mockada (poderia ser uma URL real, como do Google Books)
-        let urlString : String = "https://run.mocky.io/v3/2dff6dcc-162c-4861-ac3f-07ad4904563b"
+        let urlString : String = "https://run.mocky.io/v3/672ce67c-74e0-437a-bf35-9672093ac508"
         
         // Verifica se a string pode ser convertida para uma URL válida
         guard let url: URL = URL(string: urlString) else { return completion(nil, ErrorDetail.errorURL(urlString: urlString)) }

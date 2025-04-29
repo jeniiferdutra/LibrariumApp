@@ -14,6 +14,9 @@ class CustomTableViewCellScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        
+        label.isAccessibilityElement = true
+        label.accessibilityTraits = .staticText
         return label
     }()
     

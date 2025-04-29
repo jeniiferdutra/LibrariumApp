@@ -34,6 +34,8 @@ class CustomTableViewCell: UITableViewCell {
     public func setupCell(with category: BookCategory) {
         self.category = category
         homeScreen.categoryLabel.text = category.genre
+        // Configura o VoiceOver para ler a categoria corretamente
+        homeScreen.categoryLabel.accessibilityLabel = "Categoria: \(category.genre ?? "Desconhecida")"
         homeScreen.collectionView.reloadData()
     }
     
@@ -59,10 +61,10 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let book = category.books?[indexPath.row]
         
         // Configura o viewModel com os dados do livro
-        setupBookCell(with: book ?? Books(imageURL: "")) // Passa o objeto Books
+        setupBookCell(with: book ?? Books(imageURL: "", title: "")) // Passa o objeto Books
 
         // Configura a célula com o livro e o nome da categoria
-        cell.setupCell(book: book ?? Books(imageURL: ""), categoryName: category.genre ?? "")
+        cell.setupCell(book: book ?? Books(imageURL: "", title: ""), categoryName: category.genre ?? "")
         return cell
     }
 
