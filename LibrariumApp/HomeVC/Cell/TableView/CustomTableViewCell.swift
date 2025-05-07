@@ -38,6 +38,7 @@ class CustomTableViewCell: UITableViewCell {
         homeScreen.categoryLabel.text = categoryName
         homeScreen.categoryLabel.accessibilityLabel = "Categoria: \(categoryName)"
         homeScreen.collectionView.reloadData()
+        
     }
 
     
