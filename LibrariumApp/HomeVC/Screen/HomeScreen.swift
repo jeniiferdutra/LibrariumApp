@@ -22,14 +22,24 @@ class HomeScreen: UIView {
         return imageView
     }()
     
-    lazy var searchTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Search"
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = .white
-        textField.textColor = .black
-        return textField
+    lazy var searchBar: UISearchBar = {
+        let search = UISearchBar()
+        search.translatesAutoresizingMaskIntoConstraints = false
+        search.clipsToBounds = true
+        search.layer.cornerRadius = 20
+        search.backgroundColor = .white
+        search.barTintColor = .white
+        search.placeholder = "Search"
+        
+        // Remover backgroundImage para garantir que o fundo seja branco
+        search.backgroundImage = UIImage()
+        
+        // Ajustar o fundo do campo de texto dentro da searchBar
+        if let textField = search.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = .white
+        }
+        
+        return search
     }()
     
     lazy var tableView: UITableView = {
@@ -44,12 +54,16 @@ class HomeScreen: UIView {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
     }
+    
+    public func configSearchBarDelegate(delegate: UISearchBarDelegate) {
+            searchBar.delegate = delegate
+        }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appBackGroud
         addSubview(logoImageView)
-        addSubview(searchTextField)
+        addSubview(searchBar)
         addSubview(tableView)
         configElements()
     }
@@ -66,12 +80,12 @@ class HomeScreen: UIView {
             logoImageView.heightAnchor.constraint(equalToConstant: 110),
             logoImageView.widthAnchor.constraint(equalToConstant: 260),
 
-            searchTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
-            searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            searchTextField.heightAnchor.constraint(equalToConstant: 40),
+            searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            searchBar.heightAnchor.constraint(equalToConstant: 40),
 
-            tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

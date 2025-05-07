@@ -18,20 +18,30 @@ class CustomCollectionViewCell: UICollectionViewCell {
         configScreen()
     }
        
-       required init?(coder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func configScreen() {
-            contentView.addSubview(homeScreen)
-            homeScreen.pin(to: contentView)
-        }
-    
-    public func setupCell(book: Books, categoryName: String) {
-        homeScreen.bookImageView.image = UIImage(named: book.imageURL ?? "")
-        homeScreen.configureAccessibility(with: book.title ?? "")
+        contentView.addSubview(homeScreen)
+        homeScreen.pin(to: contentView)
     }
-
-
     
+    public func setupCell(with book: VolumeInfo) {
+        if let urlString = book.imageLinks?.thumbnail, let url = URL(string: urlString) {
+            loadImage(from: url)
+        } else {
+            self.homeScreen.bookImageView.image = UIImage(systemName: "book.fill")
+        }
+    }
+    
+    private func loadImage(from url: URL) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil,
+                  let image = UIImage(data: data) else { return }
+            DispatchQueue.main.async {
+                self.homeScreen.bookImageView.image = image
+            }
+        }.resume()
+    }
 }

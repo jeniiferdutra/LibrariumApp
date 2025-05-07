@@ -16,26 +16,25 @@ class HomeVC: UIViewController {
         homeScreen = HomeScreen()
         view = homeScreen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate(delegate: self)
-        viewModel.fetchAllRequest()
     }
-
+    
 }
 
 extension HomeVC: HomeViewModelProtocol {
     func success() {
         DispatchQueue.main.async {// Executa o código dentro do closure na thread principal
             self.homeScreen?.configTableView(delegate: self, dataSource: self)// Atualiza a interface de usuário configurando a TableView
+            self.homeScreen?.tableView.reloadData()
         }
     }
     
     func error() {
         print(#function)
     }
-    
     
 }
 
@@ -49,12 +48,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
         
         let category = viewModel.category(at: indexPath.row)
-        cell?.setupCell(with: category)
+        cell?.setupCell(viewModel: viewModel, categoryName: category)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 290
+        return viewModel.heightForRowAt
     }
     
 }

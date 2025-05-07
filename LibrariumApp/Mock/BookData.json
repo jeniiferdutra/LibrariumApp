@@ -1,36 +1,2790 @@
 {
-  "categories": [
+  "kind": "books#volumes",
+  "totalItems": 1000000,
+  "items": [
     {
-      "genre": "Fantasia",
-      "books": [
-        { "imageURL": "asa", "title": "Quarta Asa" },
-        { "imageURL": "hobbit", "title": "O Hobbit" },
-        { "imageURL": "rainha", "title": "A Rainha Vermelha" },
-        { "imageURL": "game", "title": "Game of Thrones" },
-        { "imageURL": "duna", "title": "Duna" },
-        { "imageURL": "vorazes", "title": "Jogos Vorazes" },
-        { "imageURL": "principe", "title": "O Príncipe Cruel" }
-      ]
+      "kind": "books#volume",
+      "id": "oLr2iVoNENAC",
+      "etag": "lV7KaQtySU8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/oLr2iVoNENAC",
+      "volumeInfo": {
+        "title": "Four Past Midnight",
+        "authors": [
+          "Stephen King"
+        ],
+        "publishedDate": "1990",
+        "description": "Jet passengers are stuck in a time-slip, a psychopath accuses a writer of plagiarism, a man with an overdue book encounters a demonic librarian, and a boy's camera snaps photos of a huge and nasty dog in these four horror novellas. Repackaged. Reissue.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0670835382"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780670835386"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 788,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=oLr2iVoNENAC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=oLr2iVoNENAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=oLr2iVoNENAC&dq=subject:horror&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=oLr2iVoNENAC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Four_Past_Midnight.html?hl=&id=oLr2iVoNENAC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=oLr2iVoNENAC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
     },
     {
-      "genre": "Romance",
-      "books": [
-        { "imageURL": "hoover", "title": "É Assim que Acaba" },
-        { "imageURL": "john", "title": "Querido John" },
-        { "imageURL": "dia", "title": "Um dia" },
-        { "imageURL": "honra", "title": "A Honra" },
-        { "imageURL": "outlander", "title": "Outlander" }
-      ]
+      "kind": "books#volume",
+      "id": "4dHXkNcpIXgC",
+      "etag": "UN7ZgPqhS8k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4dHXkNcpIXgC",
+      "volumeInfo": {
+        "title": "Frankenstein",
+        "authors": [
+          "Mary Shelley"
+        ],
+        "publisher": "Kidsbooks LLC",
+        "publishedDate": "1994",
+        "description": "A monster assembled by a scientist from parts of dead bodies develops a mind of his own as he learns to loathe himself and hate his creator.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1561563099"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781561563098"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 196,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=4dHXkNcpIXgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=4dHXkNcpIXgC&dq=subject:horror&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=4dHXkNcpIXgC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Frankenstein.html?hl=&id=4dHXkNcpIXgC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=4dHXkNcpIXgC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
     },
     {
-      "genre": "Terror",
-      "books": [
-        { "imageURL": "it", "title": "It: A Coisa" },
-        { "imageURL": "iluminado", "title": "O Iluminado" },
-        { "imageURL": "paciente", "title": "O Paciente" },
-        { "imageURL": "misery", "title": "Misery: Louca Obsessão" },
-        { "imageURL": "giz", "title": "O Homem de Giz" }
-      ]
+      "kind": "books#volume",
+      "id": "KbMhAQAAIAAJ",
+      "etag": "x4vw1c74uig",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/KbMhAQAAIAAJ",
+      "volumeInfo": {
+        "title": "Misery",
+        "authors": [
+          "Stephen King"
+        ],
+        "publishedDate": "1987",
+        "description": "After an almost fatal car crash, novelist Paul Sheldon finds himself being nursed by a deranged fan who holds him captive",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105040581212"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 328,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.5.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=KbMhAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=KbMhAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=KbMhAQAAIAAJ&dq=subject:horror&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=KbMhAQAAIAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Misery.html?hl=&id=KbMhAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=KbMhAQAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "gvB1DQAAQBAJ",
+      "etag": "/17ykGEHRwY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/gvB1DQAAQBAJ",
+      "volumeInfo": {
+        "title": "Tales from the Shadowhunter Academy",
+        "authors": [
+          "Cassandra Clare",
+          "Sarah Rees Brennan",
+          "Maureen Johnson",
+          "Robin Wasserman"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2016-11-15",
+        "description": "Collects short stories chronicling Simon's journey from amnesia to Ascension, as he works to regain his lost life while attending the Shadowhunter Academy.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781481443258"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1481443259"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 672,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 2,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=gvB1DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=gvB1DQAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=gvB1DQAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Tales_from_the_Shadowhunter_Academy.html?hl=&id=gvB1DQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=gvB1DQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "7fhW6PDYklgC",
+      "etag": "FyYMgSu5OeI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/7fhW6PDYklgC",
+      "volumeInfo": {
+        "title": "The Dream-quest of Unknown Kadath",
+        "authors": [
+          "Howard Phillips Lovecraft"
+        ],
+        "publisher": "Del Rey",
+        "publishedDate": "1982-02",
+        "description": "Six bone-chilling tales of bizarre beauty and awesome horror lurk in the dark of the soul, waiting to be called upon by the demons of nightmares, and let loose in the frightened mind. Only H.P. Lovecraft could conjure up these testaments to evil that will live inside of you forever.... Copyright © Libri GmbH. All rights reserved.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0345302338"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780345302335"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 260,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=7fhW6PDYklgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=7fhW6PDYklgC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=7fhW6PDYklgC&dq=subject:horror&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=7fhW6PDYklgC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Dream_quest_of_Unknown_Kadath.html?hl=&id=7fhW6PDYklgC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=7fhW6PDYklgC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1YP-hfna5ewC",
+      "etag": "FKyRbOmXDaI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1YP-hfna5ewC",
+      "volumeInfo": {
+        "title": "Thinner",
+        "authors": [
+          "Stephen King",
+          "Richard Bachman"
+        ],
+        "publisher": "Berkley",
+        "publishedDate": "1985",
+        "description": "Billy Halleck's nightmare begins after he sideswipes an old Gypsy woman as she is crossing the street: he loses ninety-three pounds within six weeks.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0451161343"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780451161345"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 324,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.7.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1YP-hfna5ewC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=1YP-hfna5ewC&dq=subject:horror&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=1YP-hfna5ewC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Thinner.html?hl=&id=1YP-hfna5ewC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1YP-hfna5ewC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "9_RvVRPMFeIC",
+      "etag": "sweVEDd5aZY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/9_RvVRPMFeIC",
+      "volumeInfo": {
+        "title": "Asian Horror Encyclopedia",
+        "subtitle": "Asian Horror Culture in Literature, Manga and Folklore",
+        "authors": [
+          "Laurence C. Bush"
+        ],
+        "publisher": "iUniverse",
+        "publishedDate": "2001",
+        "description": "The Asian Horror Encyclopedia is the first reference work of its kind in English. It covers Asian horror culture in literature, art, film and comics. From its roots in ancient Chinese folklore to the best-selling Japanese horror novelists of today, this book is a handy alphabetic reference, collecting scarce information from obscure sources.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780595201815"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0595201814"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 250,
+        "printType": "BOOK",
+        "categories": [
+          "Drama"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=9_RvVRPMFeIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=9_RvVRPMFeIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=9_RvVRPMFeIC&printsec=frontcover&dq=subject:horror&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=9_RvVRPMFeIC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Asian_Horror_Encyclopedia.html?hl=&id=9_RvVRPMFeIC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Asian_Horror_Encyclopedia-sample-epub.acsm?id=9_RvVRPMFeIC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Asian_Horror_Encyclopedia-sample-pdf.acsm?id=9_RvVRPMFeIC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=9_RvVRPMFeIC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1lJmPwAACAAJ",
+      "etag": "HVxRVrLbsXg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1lJmPwAACAAJ",
+      "volumeInfo": {
+        "title": "The Green Mile",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Orion Publishing Group",
+        "publishedDate": "2000",
+        "description": "The Green Mile: those who walk it do not return, because at the end of that walk is the room in which sits Cold Mountain penitentiary's electric chair. In 1932 the newest resident on death row is John Coffey, a giant black man convicted of the brutal murder of two little girls. But nothing is as it seems with John Coffey, and around him unfolds a bizarre and horrifying story. Evil murderer or holy innocent - whichever he is - Coffey has strange powers which may yet offer salvation to others, even if they can do nothing to save him. THE AUTHOR",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0752834223"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780752834221"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 453,
+        "printType": "BOOK",
+        "categories": [
+          "Coffey, John (Fictitious character)"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1lJmPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1lJmPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=1lJmPwAACAAJ&dq=subject:horror&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=1lJmPwAACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Green_Mile.html?hl=&id=1lJmPwAACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1lJmPwAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "3xNbAAAAMAAJ",
+      "etag": "auflsCxowis",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3xNbAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Bloodcurdling Tales of Horror and the Macabre: The Best of H. P. Lovecraft",
+        "authors": [
+          "H. P. Lovecraft"
+        ],
+        "publisher": "Ballantine Books",
+        "publishedDate": "1982",
+        "description": "Offers sixteen Lovecraft tales of horror, including \"The Shadow Out of Time.\"",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015054303402"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 392,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.9.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3xNbAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3xNbAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=3xNbAAAAMAAJ&dq=subject:horror&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=3xNbAAAAMAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Bloodcurdling_Tales_of_Horror_and_the_Ma.html?hl=&id=3xNbAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3xNbAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xFIN97PzxxYC",
+      "etag": "P2y5WYZRcM0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xFIN97PzxxYC",
+      "volumeInfo": {
+        "title": "Frankenstein",
+        "authors": [
+          "Mary Wollstonecraft Shelley"
+        ],
+        "publisher": "Signet Classics",
+        "publishedDate": "1965",
+        "description": "This revision of a widely adopted critical edition presents the 1831 text of Mary Shelley7;s English Romantic novel along with critical essays that introduce students to \"Frankenstein\" from contemporary psychoanalytic, Marxist, feminist, gender, and cultural studies perspectives. An additional essay demonstrates how various critical perspectives can be combined. In the second edition, 3 of the 6 essays are new. The text and essays are complemented by contextual documents, introductions (with bibliographies), and a glossary of critical and theoretical terms.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCSD:31822023797939"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 230,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xFIN97PzxxYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=xFIN97PzxxYC&dq=subject:horror&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=xFIN97PzxxYC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Frankenstein.html?hl=&id=xFIN97PzxxYC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xFIN97PzxxYC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "XfkmrSZgTK4C",
+      "etag": "8io8vMK/ubo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/XfkmrSZgTK4C",
+      "volumeInfo": {
+        "title": "The Loch",
+        "authors": [
+          "Steve Alten"
+        ],
+        "publisher": "Tsunami Books",
+        "publishedDate": "2006",
+        "description": "To prove the innocence of his estranged father, marine biologist Zachary Wallace must confront his childhood nightmare of nearly drowning in Loch Ness after a near-death experience causes the long forgotten memory to resurface.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0976165929"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780976165927"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 500,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=XfkmrSZgTK4C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=XfkmrSZgTK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=XfkmrSZgTK4C&dq=subject:horror&hl=&cd=11&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=XfkmrSZgTK4C&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Loch.html?hl=&id=XfkmrSZgTK4C"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=XfkmrSZgTK4C&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "DaUqAQAAIAAJ",
+      "etag": "DN07uQRNu68",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/DaUqAQAAIAAJ",
+      "volumeInfo": {
+        "title": "English Gothic",
+        "subtitle": "A Century of Horror Cinema",
+        "authors": [
+          "Jonathan Rigby"
+        ],
+        "publishedDate": "2004",
+        "description": "Traces the rise and fall of the horror genre from its nineteenth century beginnings to the present day, encompassing the lost films of the silent era, the Karloff and Lugosi chillers of the 1930's, the lurid classics from Hammer's house of horror and the explicit shockers of the 1970's.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105119834294"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 336,
+        "printType": "BOOK",
+        "categories": [
+          "Performing Arts"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=DaUqAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=DaUqAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=DaUqAQAAIAAJ&dq=subject:horror&hl=&cd=12&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=DaUqAQAAIAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/English_Gothic.html?hl=&id=DaUqAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=DaUqAQAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "f36xnlfQyDwC",
+      "etag": "cusnh8IrqyA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/f36xnlfQyDwC",
+      "volumeInfo": {
+        "title": "The Waste Lands",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Signet Book",
+        "publishedDate": "1993",
+        "description": "Roland, the Last Gunslinger, moves closer to The Dark Tower of his dreams and nightmares through a world of the fiendish foes.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0451173317"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780451173317"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 596,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=f36xnlfQyDwC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=f36xnlfQyDwC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=f36xnlfQyDwC&dq=subject:horror&hl=&cd=13&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=f36xnlfQyDwC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Waste_Lands.html?hl=&id=f36xnlfQyDwC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=f36xnlfQyDwC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "3YxhAAAAMAAJ",
+      "etag": "nmJK1/8idRs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3YxhAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Stephen King's Danse Macabre",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Berkley Publishing Group",
+        "publishedDate": "1982",
+        "description": "Information on the horror phenomenon including books, movies, radio, and T.V.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015012186527"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 408,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3YxhAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3YxhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=3YxhAAAAMAAJ&dq=subject:horror&hl=&cd=14&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=3YxhAAAAMAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Stephen_King_s_Danse_Macabre.html?hl=&id=3YxhAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3YxhAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "aCtQPgAACAAJ",
+      "etag": "OhVXM6x01F4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/aCtQPgAACAAJ",
+      "volumeInfo": {
+        "title": "Dracula",
+        "authors": [
+          "Bram Stoker"
+        ],
+        "publishedDate": "1997",
+        "description": "After discovering the double identity of the wealthy Transylvanian nobleman, Count Dracula, a small group of people vow to rid the world of the evil vampire. Illustrated notes throughout the text explain the historical background of the story.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0751370703"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780751370706"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 64,
+        "printType": "BOOK",
+        "categories": [
+          "Dracula, Count (Fictitious character)"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=aCtQPgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=aCtQPgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=aCtQPgAACAAJ&dq=subject:horror&hl=&cd=15&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=aCtQPgAACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Dracula.html?hl=&id=aCtQPgAACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=aCtQPgAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "cbFcAAAAMAAJ",
+      "etag": "xGNpdZ135i4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/cbFcAAAAMAAJ",
+      "volumeInfo": {
+        "title": "The Phantom of the Opera",
+        "authors": [
+          "Gaston Leroux"
+        ],
+        "publishedDate": "1977",
+        "description": "Under the Paris Opera House lives a disfigured musical genius who uses music to win the love of a beautiful opera singer.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015011539254"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 390,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=cbFcAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=cbFcAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=cbFcAAAAMAAJ&dq=subject:horror&hl=&cd=16&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=cbFcAAAAMAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Phantom_of_the_Opera.html?hl=&id=cbFcAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=cbFcAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "hlMdBAAAQBAJ",
+      "etag": "v6977X8HcZM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/hlMdBAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Howling Ghost",
+        "authors": [
+          "Christopher Pike"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2014-08-05",
+        "description": "Cindy's brother is taken away by a ghost. Sally, Adam, and Watch promise to bring him back.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781481410533"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1481410539"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 128,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=hlMdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=hlMdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=17&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=hlMdBAAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Howling_Ghost.html?hl=&id=hlMdBAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=hlMdBAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "b76wAAAAIAAJ",
+      "etag": "XazYeQ7Nmns",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/b76wAAAAIAAJ",
+      "volumeInfo": {
+        "title": "The Tommyknockers",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Putnam Adult",
+        "publishedDate": "1987",
+        "description": "Science fiction-roman.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCSC:32106010438106"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 566,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 2,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=b76wAAAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=b76wAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=b76wAAAAIAAJ&dq=subject:horror&hl=&cd=18&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=b76wAAAAIAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Tommyknockers.html?hl=&id=b76wAAAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=b76wAAAAIAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "9iUqngEACAAJ",
+      "etag": "AUXm+/iqBjM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/9iUqngEACAAJ",
+      "volumeInfo": {
+        "title": "The Phantom of the Opera",
+        "authors": [
+          "Jennifer Bassett"
+        ],
+        "publisher": "Oxford University",
+        "publishedDate": "2000",
+        "description": "Pack of ten best-selling iBookworms/i and– ideal for building up class libraries. Each Pack contains one copy of each listed title. liThe Adventures of Tom Sawyer/libr / liThe Elephant Man/libr /liA Little Princess/libr / liLove or Money?/libr / liThe Monkey's Paw/libr / liThe Phantom of the Opera/libr / liThe President's Murderer/libr / liSherlock Holmes and the Duke's Son/libr / liWhite Death/libr / liThe Wizard of Oz/li",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0194229513"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780194229517"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 56,
+        "printType": "BOOK",
+        "categories": [
+          "Foreign Language Study"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=9iUqngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=9iUqngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=9iUqngEACAAJ&dq=subject:horror&hl=&cd=19&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=9iUqngEACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Phantom_of_the_Opera.html?hl=&id=9iUqngEACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=9iUqngEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "F1MdBAAAQBAJ",
+      "etag": "fVrlJMkASxc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/F1MdBAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Secret Path",
+        "authors": [
+          "Christopher Pike"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2014-08-05",
+        "description": "Disregarding a warning that the town of Springfield is called \"Spooksville\" for a good reason, newcomer Adam accompanies his friends to a secret path at the graveyard that is said to lead to other, more terrifying worlds.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781481410496"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1481410490"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 128,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=F1MdBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=F1MdBAAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=20&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=F1MdBAAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Secret_Path.html?hl=&id=F1MdBAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=F1MdBAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "WXTWAAAAMAAJ",
+      "etag": "kc43gyuTRX4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/WXTWAAAAMAAJ",
+      "volumeInfo": {
+        "title": "The Long Walk",
+        "authors": [
+          "Richard Bachman",
+          "Stephen King"
+        ],
+        "publisher": "Berkley",
+        "publishedDate": "1999",
+        "description": "The dystopian classic written by Stephen King under his penname Richard Bachman",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "PSU:000046184436"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 388,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 10,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.9.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=WXTWAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=WXTWAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=WXTWAAAAMAAJ&dq=subject:horror&hl=&cd=21&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=WXTWAAAAMAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Long_Walk.html?hl=&id=WXTWAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=WXTWAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "hQONI55NRxsC",
+      "etag": "SduzRD2H6wA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/hQONI55NRxsC",
+      "volumeInfo": {
+        "title": "The Thrill Club",
+        "authors": [
+          "R. L. Stine"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "1994",
+        "description": "Talia writes horror stories that everyone loves -until they start to come true.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780671785819"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0671785818"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 164,
+        "printType": "BOOK",
+        "categories": [
+          "English fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=hQONI55NRxsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=hQONI55NRxsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=hQONI55NRxsC&printsec=frontcover&dq=subject:horror&hl=&cd=22&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=hQONI55NRxsC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Thrill_Club.html?hl=&id=hQONI55NRxsC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=hQONI55NRxsC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "mw9PExtMU3sC",
+      "etag": "y7tZKzgucdk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/mw9PExtMU3sC",
+      "volumeInfo": {
+        "title": "The Bad Death of Eduard Delacroix",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Signet",
+        "publishedDate": "1996",
+        "description": "Time runs out for one of the inmates on death row at Cold Mountain penitentiary.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0451190556"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780451190550"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 100,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.4.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=mw9PExtMU3sC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=mw9PExtMU3sC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=mw9PExtMU3sC&dq=subject:horror&hl=&cd=23&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=mw9PExtMU3sC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Bad_Death_of_Eduard_Delacroix.html?hl=&id=mw9PExtMU3sC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=mw9PExtMU3sC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "TIjxzQEACAAJ",
+      "etag": "TtBEGh2mftE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/TIjxzQEACAAJ",
+      "volumeInfo": {
+        "title": "The Castle of the Carpathians",
+        "authors": [
+          "Jules Verne"
+        ],
+        "publisher": "Forest Tsar Press",
+        "publishedDate": "2010-01-05",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1935333038"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781935333036"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 240,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=TIjxzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=TIjxzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=TIjxzQEACAAJ&dq=subject:horror&hl=&cd=24&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=TIjxzQEACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Castle_of_the_Carpathians.html?hl=&id=TIjxzQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=TIjxzQEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ylLoGsee8YcC",
+      "etag": "l41/Tg3bExU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ylLoGsee8YcC",
+      "volumeInfo": {
+        "title": "Needful Things",
+        "authors": [
+          "Stephen King"
+        ],
+        "publishedDate": "1991",
+        "description": "In King's #1 bestselling book, the master of the horror genre takes readers to his famous fictional town for one final visit. A wonderful new store has opened in Castle Rock, Maine. It's a place where you can get anything your heart desires--sexual pleasure, wealth, power . . . but for a nerve-shattering price. \"Ranks with King's best!\"--Publishers Weekly. Copyright © Libri GmbH. All rights reserved.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0670839531"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780670839537"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 710,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 14,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.9.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ylLoGsee8YcC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ylLoGsee8YcC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=ylLoGsee8YcC&dq=subject:horror&hl=&cd=25&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=ylLoGsee8YcC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Needful_Things.html?hl=&id=ylLoGsee8YcC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=ylLoGsee8YcC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "5tVIOmhXsG4C",
+      "etag": "G1H6petVve0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/5tVIOmhXsG4C",
+      "volumeInfo": {
+        "title": "Forever Odd",
+        "authors": [
+          "Dean Ray Koontz"
+        ],
+        "publisher": "Bantam",
+        "publishedDate": "2006",
+        "description": "In the unique world of Pico, Odd--an unforgettable hero who lives between the living and the dead--takes a stand against evil in a battle where there are no innocent bystanders. Reprint.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780553588262"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0553588265"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 364,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 2,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.1.0.0.preview.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=5tVIOmhXsG4C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=5tVIOmhXsG4C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=5tVIOmhXsG4C&dq=subject:horror&hl=&cd=26&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=5tVIOmhXsG4C&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Forever_Odd.html?hl=&id=5tVIOmhXsG4C"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=5tVIOmhXsG4C&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Wv9Rs7uC-mQC",
+      "etag": "E8qcn+E/5dM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Wv9Rs7uC-mQC",
+      "volumeInfo": {
+        "title": "The Shining",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Random House LLC",
+        "publishedDate": "1977",
+        "description": "Terrible events occur at an isolated hotel in the off season, when a small boy with psychic powers struggles to hold his own against the forces of evil that are driving his father insane. Reissue.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780385121675"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0385121679"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 447,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.0.0.preview.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Wv9Rs7uC-mQC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Wv9Rs7uC-mQC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=Wv9Rs7uC-mQC&dq=subject:horror&hl=&cd=27&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=Wv9Rs7uC-mQC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Shining.html?hl=&id=Wv9Rs7uC-mQC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Wv9Rs7uC-mQC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "3Hr5ONX-2G8C",
+      "etag": "AAMEQhvbp+0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3Hr5ONX-2G8C",
+      "volumeInfo": {
+        "title": "On Fire",
+        "subtitle": "A Teen Wolf Novel",
+        "authors": [
+          "Nancy Holder"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2012-07-17",
+        "description": "Based on the hit MTV series \"Teen Wolf.\" Scott was just a regular guy until one bite changed his life. Now he struggles to understand who he is and what he might become. Is he more wolf than human--or is it the other way around? Whichever it is, it's not going to be easy.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781451674477"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1451674473"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 246,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 2,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3Hr5ONX-2G8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3Hr5ONX-2G8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=3Hr5ONX-2G8C&printsec=frontcover&dq=subject:horror&hl=&cd=28&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=3Hr5ONX-2G8C&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/On_Fire.html?hl=&id=3Hr5ONX-2G8C"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3Hr5ONX-2G8C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "_Jpv0u5mgM0C",
+      "etag": "rd+wuwP4ymQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/_Jpv0u5mgM0C",
+      "volumeInfo": {
+        "title": "Night of the Living Dummy II",
+        "authors": [
+          "R. L. Stine"
+        ],
+        "publisher": "Scholastic Incorporated",
+        "publishedDate": "1995",
+        "description": "When Amy's ventriloquist dummy, Dennis, is broken, her father buys her Slappy, unaware that the dummy is possessed by an evil presence.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0439573742"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780439573740"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 148,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "averageRating": 3,
+        "ratingsCount": 3,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.8.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=_Jpv0u5mgM0C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=_Jpv0u5mgM0C&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=_Jpv0u5mgM0C&dq=subject:horror&hl=&cd=29&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=_Jpv0u5mgM0C&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Night_of_the_Living_Dummy_II.html?hl=&id=_Jpv0u5mgM0C"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=_Jpv0u5mgM0C&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Cd60QAAACAAJ",
+      "etag": "eafEV+9Wv+0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Cd60QAAACAAJ",
+      "volumeInfo": {
+        "title": "Ring",
+        "authors": [
+          "Kōji Suzuki"
+        ],
+        "publishedDate": "2003",
+        "description": "\"Ring\" is not only a chillingly told horror story but also a shrewdly intelligent and subversive commentary on the power of imagery and contagious consumerism.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1932234004"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781932234008"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 0,
+        "printType": "BOOK",
+        "categories": [
+          "Detective and mystery stories"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Cd60QAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Cd60QAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=Cd60QAAACAAJ&dq=subject:horror&hl=&cd=30&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=Cd60QAAACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Ring.html?hl=&id=Cd60QAAACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Cd60QAAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "v4kmDwAAQBAJ",
+      "etag": "idXBBA1sq0E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/v4kmDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Witcher Volume 3 Curse of Crows",
+        "authors": [
+          "Paul Tobin",
+          "Borys Pugacz-Muraszkiewicz",
+          "Karolina Stachyra",
+          "Travis Currit"
+        ],
+        "publisher": "Dark Horse Comics",
+        "publishedDate": "2017",
+        "description": "\"The Witcher game is based on a novel of Andrzej Sapkowski\"--Title page verso.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781506701615"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1506701612"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 129,
+        "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "3ddf0451b863c221_A"
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=v4kmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=v4kmDwAAQBAJ&printsec=frontcover&dq=subject:horror&hl=&cd=31&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=v4kmDwAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Witcher_Volume_3_Curse_of_Crows.html?hl=&id=v4kmDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Witcher_Volume_3_Curse_of_Crows-sample-pdf.acsm?id=v4kmDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=v4kmDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "8khaAAAAMAAJ",
+      "etag": "SbKakg7B1Yw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/8khaAAAAMAAJ",
+      "volumeInfo": {
+        "title": "Bitten",
+        "authors": [
+          "Kelley Armstrong"
+        ],
+        "publisher": "Viking Adult",
+        "publishedDate": "2001",
+        "description": "\"Young, beautiful, and successful, Elena Michaels seems to have it all. Her happy, organized life follows a predictable pattern: filing stories for her job as a journalist, working out at the gym, living with her architect boyfriend, and lunching with her girlfriends from the office. And once a week, in the dead of night, she streaks through a downtown ravine, naked and furred, tearing at the throats of her animal prey.\" \"Elena Michaels is a werewolf.\" \"The man who made her one has been left behind, but his dark legacy has not. And though Elena struggles to maintain the normal life she's worked so hard to create, she cannot resist the call of the elite pack of werewolves from her past. Her feral instincts will lead her back to them and into a desperate war for survival that will test her own understanding of who, and what, she is.\"--BOOK JACKET.Title Summary field provided by Blackwell North America, Inc. All Rights Reserved",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015053117738"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 358,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=8khaAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=8khaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=8khaAAAAMAAJ&dq=subject:horror&hl=&cd=32&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=8khaAAAAMAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Bitten.html?hl=&id=8khaAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=8khaAAAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "m-3GsxecmzoC",
+      "etag": "zkyxwI3dFDs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/m-3GsxecmzoC",
+      "volumeInfo": {
+        "title": "The Crimson Spell",
+        "authors": [
+          "F. Goldsborough",
+          "Constance M. Burge"
+        ],
+        "publisher": "Simon Pulse",
+        "publishedDate": "2000",
+        "description": "Prue, Piper, and Phoebe don't know that a coven of warlocks is hunting them ...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0671041649"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780671041649"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 194,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=m-3GsxecmzoC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=m-3GsxecmzoC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=m-3GsxecmzoC&dq=subject:horror&hl=&cd=33&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=m-3GsxecmzoC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Crimson_Spell.html?hl=&id=m-3GsxecmzoC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=m-3GsxecmzoC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "snMOU7EnX0kC",
+      "etag": "rWXSMSu7Qfk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/snMOU7EnX0kC",
+      "volumeInfo": {
+        "title": "Night Embrace",
+        "authors": [
+          "Sherrilyn Kenyon"
+        ],
+        "publisher": "Macmillan",
+        "publishedDate": "2003-07-13",
+        "description": "In this second installment in the bestselling Dark-Hunter series, Talon meets Sunshine, who is the key to ending his curse once and for all.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0312984820"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780312984823"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 420,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 5,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.7.6.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=snMOU7EnX0kC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=snMOU7EnX0kC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=snMOU7EnX0kC&dq=subject:horror&hl=&cd=34&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=snMOU7EnX0kC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Night_Embrace.html?hl=&id=snMOU7EnX0kC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=snMOU7EnX0kC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "DdHRpPUi5LsC",
+      "etag": "oeyWxQsVwjs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/DdHRpPUi5LsC",
+      "volumeInfo": {
+        "title": "Christine",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Berkley",
+        "publishedDate": "1983",
+        "description": "Arnie Cunningham, a bookish and bullied high school senior, becomes obsessed with a 1958 Plymouth named Christine, which he is restoring.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0451160444"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780451160447"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 534,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 33,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.4.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=DdHRpPUi5LsC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=DdHRpPUi5LsC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=DdHRpPUi5LsC&dq=subject:horror&hl=&cd=35&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=DdHRpPUi5LsC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Christine.html?hl=&id=DdHRpPUi5LsC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=DdHRpPUi5LsC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "oPYGelk-5GYC",
+      "etag": "SbspJiYnB/A",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/oPYGelk-5GYC",
+      "volumeInfo": {
+        "title": "Stephen King's Danse Macabre",
+        "authors": [
+          "Stephen King"
+        ],
+        "publisher": "Berkley",
+        "publishedDate": "1983",
+        "description": "Information on the horror phenomenon including books, movies, radio, and T.V.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0425104338"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780425104330"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 468,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 4,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.4.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=oPYGelk-5GYC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=oPYGelk-5GYC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=oPYGelk-5GYC&dq=subject:horror&hl=&cd=36&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=oPYGelk-5GYC&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Stephen_King_s_Danse_Macabre.html?hl=&id=oPYGelk-5GYC"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=oPYGelk-5GYC&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "64L6NAEACAAJ",
+      "etag": "UKbcY9AIhlA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/64L6NAEACAAJ",
+      "volumeInfo": {
+        "title": "Wolf Island",
+        "authors": [
+          "Darren Shan"
+        ],
+        "publisher": "Little Brown & Company",
+        "publishedDate": "2009",
+        "description": "As the mysterious and sinister Shadow builds up an army of demons, Grubbs Grady and his friends search desperately for ways to combat its evil plot, but a new lead unexpectedly takes them to an old foe--the Lambs.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0316048909"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780316048903"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 196,
+        "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=64L6NAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=64L6NAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=64L6NAEACAAJ&dq=subject:horror&hl=&cd=37&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=64L6NAEACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Wolf_Island.html?hl=&id=64L6NAEACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=64L6NAEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "LswyEAAAQBAJ",
+      "etag": "oqvwX6nfzXE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/LswyEAAAQBAJ",
+      "volumeInfo": {
+        "title": "All Our Hidden Gifts",
+        "authors": [
+          "Caroline O'Donoghue"
+        ],
+        "publisher": "Candlewick Press",
+        "publishedDate": "2021-06-08",
+        "description": "When her friend mysteriously vanishes after drawing an unsettling tarot card called The Housekeeper, Maeve uses her deep connection with the cards to search for clues the police cannot find.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781536213942"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1536213942"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 385,
+        "printType": "BOOK",
+        "categories": [
+          "Young Adult Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.0.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=LswyEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=LswyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=LswyEAAAQBAJ&dq=subject:horror&hl=&cd=38&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=LswyEAAAQBAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/All_Our_Hidden_Gifts.html?hl=&id=LswyEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=LswyEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "eqyk7DP7ht8C",
+      "etag": "RX/n+PZwZWE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/eqyk7DP7ht8C",
+      "volumeInfo": {
+        "title": "Red Sonja - She Devil with a Sword",
+        "authors": [
+          "Mike Avon Oeming",
+          "Michael Avon Oeming"
+        ],
+        "publisher": "Dynamite",
+        "publishedDate": "2007",
+        "description": "The greatest threat Hyboria has ever faced is the return of the villainous Kulan Gath. Gath's true plans are revealed and Sonja and her companions are left bloody and broken before it's all over.--From back cover.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1933305525"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781933305523"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 172,
+        "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.8.8.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=eqyk7DP7ht8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=eqyk7DP7ht8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=eqyk7DP7ht8C&printsec=frontcover&dq=subject:horror&hl=&cd=39&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=eqyk7DP7ht8C&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Red_Sonja_She_Devil_with_a_Sword.html?hl=&id=eqyk7DP7ht8C"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.br/books/download/Red_Sonja_She_Devil_with_a_Sword-sample-pdf.acsm?id=eqyk7DP7ht8C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=eqyk7DP7ht8C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "eXLRAAAACAAJ",
+      "etag": "kSsnLPu2zf8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/eXLRAAAACAAJ",
+      "volumeInfo": {
+        "title": "Spiral",
+        "authors": [
+          "Kōji Suzuki",
+          "Glynne Walley"
+        ],
+        "publisher": "Vertical Incorporated",
+        "publishedDate": "2005",
+        "description": "Learning about a series of mysterious deaths caused by an unknown virus, Ando, a physician, faces the choice of finding a cure for the virus or using the information he has gathered to help bring his drowned son back from the dead.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1932234160"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781932234169"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 283,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=eXLRAAAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=eXLRAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.br/books?id=eXLRAAAACAAJ&dq=subject:horror&hl=&cd=40&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=eXLRAAAACAAJ&dq=subject:horror&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Spiral.html?hl=&id=eXLRAAAACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=eXLRAAAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
     }
   ]
 }

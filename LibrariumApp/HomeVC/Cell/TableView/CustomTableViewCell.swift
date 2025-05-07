@@ -10,9 +10,10 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
     
     static let identifier: String = "CustomTableViewCell"
-    private var viewModel: HomeTableViewModel?
-    private var category: BookCategory?
-
+    
+    private var viewModel: HomeViewModel?
+    private var categoryName: String?
+    
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,45 +32,44 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     // Configura a célula com os dados da categoria
-    public func setupCell(with category: BookCategory) {
-        self.category = category
-        homeScreen.categoryLabel.text = category.genre
-        // Configura o VoiceOver para ler a categoria corretamente
-        homeScreen.categoryLabel.accessibilityLabel = "Categoria: \(category.genre ?? "Desconhecida")"
+    public func setupCell(viewModel: HomeViewModel, categoryName: String) {
+        self.viewModel = viewModel
+        self.categoryName = categoryName
+        homeScreen.categoryLabel.text = categoryName
+        homeScreen.categoryLabel.accessibilityLabel = "Categoria: \(categoryName)"
         homeScreen.collectionView.reloadData()
     }
-    
-    // A célula agora usa a ViewModel para configurar os livros
-        private func setupBookCell(with book: Books) {
-            self.viewModel = HomeTableViewModel(book: book)
-        }
 
+    
 }
 
 
 extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return category?.books?.count ?? 0
+        guard let category = categoryName else { return 0 }
+        let books = viewModel?.numberOfItemsInSection(for: category) ?? []
+        return books.count // Contando os itens da lista de livros
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell,
-              let category = category else {
-            return UICollectionViewCell()
-        }
-
-        let book = category.books?[indexPath.row]
-        
-        // Configura o viewModel com os dados do livro
-        setupBookCell(with: book ?? Books(imageURL: "", title: "")) // Passa o objeto Books
-
-        // Configura a célula com o livro e o nome da categoria
-        cell.setupCell(book: book ?? Books(imageURL: "", title: ""), categoryName: category.genre ?? "")
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 230) 
-    }
+                  let category = categoryName else {
+                return UICollectionViewCell()
+            }
+            
+            // Acessando os livros da categoria
+            let books = viewModel?.numberOfItemsInSection(for: category) ?? []
+            
+            // Garantir que o livro existe na posição
+            let book = books[indexPath.row]
+            
+            // Configurar a célula com o livro
+            cell.setupCell(with: book) // Passa apenas o livro aqui, sem a categoria
+            return cell
+     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return viewModel?.sizeForItemAt ?? .zero
+    }
 }
