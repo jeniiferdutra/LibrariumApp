@@ -34,15 +34,15 @@ class HomeViewModel {
     
     private func fetchCategories() {
         let categoryUrls = [
-            "https://www.googleapis.com/books/v1/volumes?q=subject:horror&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:romance&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:fantasy&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:adventure&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:sci-fi&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:mystery&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:religion&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:art&maxResults=15",
-            "https://www.googleapis.com/books/v1/volumes?q=subject:technology&maxResults=15"
+            "horror",
+            "romance",
+            "fantasy",
+            "adventure",
+            "sci-fi",
+            "mystery",
+            "religion",
+            "art",
+            "technology"
         ]
         
         // Grupo para esperar todas as requisições assíncronas

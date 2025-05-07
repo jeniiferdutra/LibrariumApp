@@ -28,7 +28,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     public func setupCell(with book: VolumeInfo) {
-        if let urlString = book.imageLinks?.thumbnail, let url = URL(string: urlString) {
+        if let urlString = book.imageLinks?.thumbnail?
+                .replacingOccurrences(of: "http://", with: "https://"),
+           let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: encodedString) {
             loadImage(from: url)
         } else {
             self.homeScreen.bookImageView.image = UIImage(systemName: "book.fill")
