@@ -38,11 +38,10 @@ class HomeViewModel {
             "romance",
             "fantasy",
             "adventure",
-            "sci-fi",
+            "Juvenile Fiction",
             "mystery",
-            "religion",
-            "art",
-            "technology"
+            "Comics & Graphic Novels",
+            //"Science",
         ]
         
         // Grupo para esperar todas as requisições assíncronas
@@ -52,18 +51,15 @@ class HomeViewModel {
         for url in categoryUrls {
             group.enter()
             service.getBooksByCategory(category: url) { bookData, error in
-                if let bookData = bookData, let categoriesInBook = bookData.items?.compactMap({ $0.volumeInfo?.categories }).flatMap({ $0 }) {
-                    // Se existirem categorias, adicionamos ao array
-                    fetchedCategories.append(contentsOf: categoriesInBook)
-                    // Preencher o dicionário booksByCategory
-                    categoriesInBook.forEach { category in
-                        if self.booksByCategory[category] == nil {
-                            self.booksByCategory[category] = []
-                        }
-                        if let books = bookData.items?.compactMap({ $0.volumeInfo }) {
-                            self.booksByCategory[category]?.append(contentsOf: books)
-                        }
-                    }
+                let category = url.capitalized  // "Romance", "Horror", etc.
+                if self.booksByCategory[category] == nil {
+                    self.booksByCategory[category] = []
+                }
+                if let books = bookData?.items?.compactMap({ $0.volumeInfo }) {
+                    self.booksByCategory[category]?.append(contentsOf: books)
+                }
+                if !fetchedCategories.contains(category) {
+                    fetchedCategories.append(category)
                 }
                 group.leave()
             }

@@ -61,7 +61,7 @@ class BookService {
     
     // Função para obter dados de livros de várias categorias (Horror, Romance, etc.)
     func getBooksForAllCategories(completion: @escaping ([String: BookData]?, Error?) -> Void) {
-            let categories = ["Horror", "Romance", "Fantasy", "Adventure", "Science Fiction", "Mystery", "Religion", "Art", "Technology"]
+            let categories = ["Horror", "Romance", "Fantasy", "Adventure", "Science Fiction", "Mystery", "Religion", "Art", "Computers"]
             var booksByCategory: [String: BookData] = [:] // Dicionário para armazenar dados por categoria
             
             let dispatchGroup = DispatchGroup()  // Para realizar requisições paralelamente

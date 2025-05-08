@@ -77,7 +77,7 @@ class HomeScreen: UIView {
             
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 110),
+            logoImageView.heightAnchor.constraint(equalToConstant: 115),
             logoImageView.widthAnchor.constraint(equalToConstant: 260),
 
             searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
