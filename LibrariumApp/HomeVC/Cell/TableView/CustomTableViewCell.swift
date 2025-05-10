@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol CustomTableViewCellDelegate: AnyObject {
+    func didTapBook(_ volumeInfo: VolumeInfo)
+}
+
 class CustomTableViewCell: UITableViewCell {
+    
+    weak var delegate: CustomTableViewCellDelegate?
     
     static let identifier: String = "CustomTableViewCell"
     
     private var viewModel: HomeViewModel?
     private var categoryName: String?
+    private var books: [VolumeInfo] = []
     
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
     
@@ -32,15 +39,14 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     // Configura a célula com os dados da categoria
-    public func setupCell(viewModel: HomeViewModel, categoryName: String) {
+    public func setupCell(viewModel: HomeViewModel, categoryName: String, with books: [VolumeInfo]) {
         self.viewModel = viewModel
         self.categoryName = categoryName
+        self.books = books
         homeScreen.categoryLabel.text = categoryName
         homeScreen.categoryLabel.accessibilityLabel = "Categoria: \(categoryName)"
         homeScreen.collectionView.reloadData()
-        
     }
-
     
 }
 
@@ -55,22 +61,27 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell,
-                  let category = categoryName else {
-                return UICollectionViewCell()
-            }
-            
-            // Acessando os livros da categoria
-            let books = viewModel?.numberOfItemsInSection(for: category) ?? []
-            
-            // Garantir que o livro existe na posição
-            let book = books[indexPath.row]
-            
-            // Configurar a célula com o livro
-            cell.setupCell(with: book) // Passa apenas o livro aqui, sem a categoria
-            return cell
-     }
+              let category = categoryName else {
+            return UICollectionViewCell()
+        }
+        
+        // Acessando os livros da categoria
+        let books = viewModel?.numberOfItemsInSection(for: category) ?? []
+        
+        // Garantir que o livro existe na posição
+        let book = books[indexPath.row]
+        
+        // Configurar a célula com o livro
+        cell.setupCell(with: book) // Passa apenas o livro aqui, sem a categoria
+        return cell
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel?.sizeForItemAt ?? .zero
+        return viewModel?.sizeForItemAt ?? CGSize(width: 150, height: 230)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedBook = books[indexPath.row]
+            delegate?.didTapBook(selectedBook)
     }
 }

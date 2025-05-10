@@ -27,16 +27,18 @@ class HomeScreen: UIView {
         search.translatesAutoresizingMaskIntoConstraints = false
         search.clipsToBounds = true
         search.layer.cornerRadius = 20
-        search.backgroundColor = .white
-        search.barTintColor = .white
-        search.placeholder = "Search"
         
         // Remover backgroundImage para garantir que o fundo seja branco
         search.backgroundImage = UIImage()
-        
+        search.barTintColor = UIColor(named: "appBackGroud")
         // Ajustar o fundo do campo de texto dentro da searchBar
         if let textField = search.value(forKey: "searchField") as? UITextField {
             textField.backgroundColor = .white
+            textField.textColor = .black
+            textField.attributedPlaceholder = NSAttributedString(
+                string: "Search",
+                attributes: [.foregroundColor: UIColor.lightGray]
+            )
         }
         
         return search
@@ -46,6 +48,7 @@ class HomeScreen: UIView {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.separatorStyle = .none
+        table.backgroundColor = .appBackGroud
         table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         return table
     }()

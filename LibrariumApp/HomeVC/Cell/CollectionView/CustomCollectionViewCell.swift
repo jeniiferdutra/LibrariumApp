@@ -36,6 +36,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         } else {
             self.homeScreen.bookImageView.image = UIImage(systemName: "book.fill")
         }
+        
     }
     
     private func loadImage(from url: URL) {

@@ -17,6 +17,9 @@ class HomeViewModel {
     private var service: BookService = BookService()
     private var categories: [String] = []
     private var booksByCategory: [String: [VolumeInfo]] = [:]
+    private var searchBookData: BookData?
+    public var isSearching: Bool = false
+    private var filteredBooks: [VolumeInfo] = []
     
     private weak var delegate: HomeViewModelProtocol?
     
@@ -27,7 +30,7 @@ class HomeViewModel {
     public var heightForRowAt: CGFloat {
         return 290
     }
-        
+    
     init() {
         fetchCategories() // Carregar as categorias ao inicializar
     }
@@ -74,11 +77,11 @@ class HomeViewModel {
     }
     
     public func numberOfCategories() -> Int {
-        return categories.count
+        return isSearching ? 1 : categories.count
     }
     
     func category(at index: Int) -> String {
-        return categories[index]
+        return isSearching ? "Resultado da Busca" : categories[index]
     }
     
     public func numberOfItemsInSection(for category: String) -> [VolumeInfo] { // acessar os livros por categoria
@@ -86,7 +89,35 @@ class HomeViewModel {
     }
     
     public var sizeForItemAt: CGSize {
-        return CGSize(width: 150, height: 230)
+            return CGSize(width: 150, height: 230)
+        }
+    
+    public func filterSearchText(_ text: String) {
+        if text.isEmpty {
+            isSearching = false
+            filteredBooks = []
+        } else {
+            isSearching = true
+            filteredBooks = booksByCategory
+                .flatMap { $0.value } // junta todos os livros de todas as categorias
+                .filter { $0.title?.lowercased().contains(text.lowercased()) ?? false }
+        }
+    }
+    
+    public func numberOfFilteredBooks() -> Int {
+        return filteredBooks.count
+    }
+    
+    public func filteredBook(at index: Int) -> VolumeInfo {
+        return filteredBooks[index]
+    }
+    
+    public func books(for category: String) -> [VolumeInfo] {
+        return booksByCategory[category] ?? []
     }
 }
+
+
+
+
 
