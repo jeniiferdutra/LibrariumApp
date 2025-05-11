@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7000724FC900AA962B22B5D /* Pods_LibrariumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607B072C418E4C00D63A878B /* Pods_LibrariumApp.framework */; };
 		D061F0742DB09A1D009078FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D061F0732DB09A1D009078FF /* FirebaseAuth */; };
 		D061F0762DB09A1D009078FF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D061F0752DB09A1D009078FF /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		607B072C418E4C00D63A878B /* Pods_LibrariumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibrariumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA87CB0C238191672029F7C2 /* Pods-LibrariumApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibrariumApp.release.xcconfig"; path = "Target Support Files/Pods-LibrariumApp/Pods-LibrariumApp.release.xcconfig"; sourceTree = "<group>"; };
 		D0BE43C32DAF435B0048F391 /* LibrariumApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibrariumApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4AFAF979979A4E731C1457E /* Pods-LibrariumApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibrariumApp.debug.xcconfig"; path = "Target Support Files/Pods-LibrariumApp/Pods-LibrariumApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,17 +47,37 @@
 			files = (
 				D061F0742DB09A1D009078FF /* FirebaseAuth in Frameworks */,
 				D061F0762DB09A1D009078FF /* FirebaseCrashlytics in Frameworks */,
+				A7000724FC900AA962B22B5D /* Pods_LibrariumApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56C668F3D1D4A2384BB7978B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				607B072C418E4C00D63A878B /* Pods_LibrariumApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87A59A3BCE646824ADF5B20A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4AFAF979979A4E731C1457E /* Pods-LibrariumApp.debug.xcconfig */,
+				BA87CB0C238191672029F7C2 /* Pods-LibrariumApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D0BE43BA2DAF435B0048F391 = {
 			isa = PBXGroup;
 			children = (
 				D0BE43C52DAF435B0048F391 /* LibrariumApp */,
 				D0BE43C42DAF435B0048F391 /* Products */,
+				87A59A3BCE646824ADF5B20A /* Pods */,
+				56C668F3D1D4A2384BB7978B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,10 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0BE43D62DAF43620048F391 /* Build configuration list for PBXNativeTarget "LibrariumApp" */;
 			buildPhases = (
+				1827C8BB1152607FAD3985D0 /* [CP] Check Pods Manifest.lock */,
 				D0BE43BF2DAF435B0048F391 /* Sources */,
 				D0BE43C02DAF435B0048F391 /* Frameworks */,
 				D0BE43C12DAF435B0048F391 /* Resources */,
 				D0EE34102DB9E089001F53B2 /* ShellScript */,
+				2590D13EBBBF0F5F02BF998E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1827C8BB1152607FAD3985D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibrariumApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2590D13EBBBF0F5F02BF998E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LibrariumApp/Pods-LibrariumApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LibrariumApp/Pods-LibrariumApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LibrariumApp/Pods-LibrariumApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D0EE34102DB9E089001F53B2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +243,7 @@
 /* Begin XCBuildConfiguration section */
 		D0BE43D72DAF43620048F391 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4AFAF979979A4E731C1457E /* Pods-LibrariumApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -212,6 +278,7 @@
 		};
 		D0BE43D82DAF43620048F391 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA87CB0C238191672029F7C2 /* Pods-LibrariumApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
