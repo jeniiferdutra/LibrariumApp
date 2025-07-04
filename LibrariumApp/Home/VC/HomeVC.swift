@@ -95,6 +95,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return viewModel.isSearching ? 230 : viewModel.heightForRowAt
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if viewModel.isSearching {
+            let selectedBook = viewModel.filteredBook(at: indexPath.row)
+            let viewModel = BookDetailViewModel(volumeInfo: selectedBook)
+            let detailVC = BookDetailVC(viewModel: viewModel)
+            present(detailVC, animated: true)
+        }
+    }
+    
     func didTapBook(_ volumeInfo: VolumeInfo) {
         let viewModel = BookDetailViewModel(volumeInfo: volumeInfo)
         let detailVC = BookDetailVC(viewModel: viewModel)
