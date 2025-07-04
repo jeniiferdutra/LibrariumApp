@@ -17,9 +17,10 @@ enum ErrorDetail: Swift.Error { // MARK: Customizar os tipos de erros
 
 class BookService {
     
-    func getBookDataURLSession(completion: @escaping (BookData?, Error?) -> Void) {
+    // Função para obter dados de livros de uma categoria específica
+    func getBooksByCategory(category: String, completion: @escaping (BookData?, Error?) -> Void) {
         // URL da API mockada (poderia ser uma URL real, como do Google Books)
-        let urlString : String = "https://run.mocky.io/v3/672ce67c-74e0-437a-bf35-9672093ac508"
+        let urlString: String = "https://www.googleapis.com/books/v1/volumes?q=subject:\(category)&maxResults=15"
         
         // Verifica se a string pode ser convertida para uma URL válida
         guard let url: URL = URL(string: urlString) else { return completion(nil, ErrorDetail.errorURL(urlString: urlString)) }
@@ -57,6 +58,34 @@ class BookService {
         }
         task.resume() // Inicia a task (sem isso, a requisição não acontece)
     }
+    
+    // Função para obter dados de livros de várias categorias (Horror, Romance, etc.)
+    func getBooksForAllCategories(completion: @escaping ([String: BookData]?, Error?) -> Void) {
+            let categories = ["Horror", "Romance", "Fantasy", "Adventure", "Science Fiction", "Mystery", "Religion", "Art", "Computers"]
+            var booksByCategory: [String: BookData] = [:] // Dicionário para armazenar dados por categoria
+            
+            let dispatchGroup = DispatchGroup()  // Para realizar requisições paralelamente
+            
+            for category in categories {
+                dispatchGroup.enter()  // Inicia a tarefa para a categoria
+                
+                // Chama a função para cada categoria
+                getBooksByCategory(category: category) { bookData, error in
+                    if let bookData = bookData {
+                        booksByCategory[category] = bookData  // Armazena o resultado no dicionário
+                    } else if let error = error {
+                        print("Erro ao buscar dados para a categoria \(category): \(error.localizedDescription)")
+                    }
+                    
+                    dispatchGroup.leave()  // Finaliza a tarefa para a categoria
+                }
+            }
+            
+            // Após todas as requisições serem concluídas
+            dispatchGroup.notify(queue: .main) {
+                completion(booksByCategory, nil)
+            }
+        }
     
     
     func getBookDataJson(completion: @escaping (BookData?, Error?) -> Void) {
