@@ -44,13 +44,31 @@ class HomeScreen: UIView {
         return search
     }()
     
+    lazy var bookImageView: UIImageView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "books")
+        return img
+    }()
+    
+    lazy var subTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Explore livros por categoria, descubra novas histórias."
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.separatorStyle = .none
-        table.backgroundColor = .appBackGroud
-        table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
-        return table
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .appBackGroud
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.bounces = false
+        return tableView
     }()
     
     public func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
@@ -65,14 +83,20 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appBackGroud
-        addSubview(logoImageView)
-        addSubview(searchBar)
-        addSubview(tableView)
+        addViews()
         configElements()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addViews() {
+        addSubview(logoImageView)
+        addSubview(searchBar)
+        addSubview(bookImageView)
+        bookImageView.addSubview(subTitleLabel)
+        addSubview(tableView)
     }
 
     private func configElements() {
@@ -87,8 +111,17 @@ class HomeScreen: UIView {
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 40),
-
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
+            
+            bookImageView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bookImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bookImageView.heightAnchor.constraint(equalToConstant: 250),
+            
+            subTitleLabel.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: 16),
+            subTitleLabel.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: -16),
+            subTitleLabel.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: -20),
+            
+            tableView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

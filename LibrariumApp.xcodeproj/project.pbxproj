@@ -38,6 +38,11 @@
 			path = LibrariumApp;
 			sourceTree = "<group>";
 		};
+		D0EABE472E18BF4C0067C61E /* BookDetail */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 		D0BE43BA2DAF435B0048F391 = {
 			isa = PBXGroup;
 			children = (
+				D0EABE472E18BF4C0067C61E /* BookDetail */,
 				D0BE43C52DAF435B0048F391 /* LibrariumApp */,
 				D0BE43C42DAF435B0048F391 /* Products */,
 				87A59A3BCE646824ADF5B20A /* Pods */,
@@ -109,6 +115,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D0BE43C52DAF435B0048F391 /* LibrariumApp */,
+				D0EABE472E18BF4C0067C61E /* BookDetail */,
 			);
 			name = LibrariumApp;
 			packageProductDependencies = (
