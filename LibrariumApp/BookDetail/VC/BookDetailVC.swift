@@ -33,18 +33,18 @@ class BookDetailVC: UIViewController {
     }
     
     private func configureData() {
-        screen?.titleLabel.text = viewModel.titleText
-        screen?.authorsLabel.text = viewModel.authorsText
-        screen?.publisherLabel.text = viewModel.publisherText
-        screen?.publishedDateLabel.text = viewModel.publishedDateText
-        screen?.pageCountLabel.text = viewModel.pageCountText
-        screen?.descriptionTextLabel.text = viewModel.descriptionText
-        
-        if let url = viewModel.imageURL {
-            screen?.coverImageView.af.setImage(withURL: url)
-        } else {
-            screen?.coverImageView.image = UIImage(named: "semcapa")
-        }
+//        screen?.titleLabel.text = viewModel.titleText
+//        screen?.authorsLabel.text = viewModel.authorsText
+//        screen?.publisherLabel.text = viewModel.publisherText
+//        screen?.publishedDateLabel.text = viewModel.publishedDateText
+//        screen?.pageCountLabel.text = viewModel.pageCountText
+//        screen?.descriptionTextLabel.text = viewModel.descriptionText
+//        
+//        if let url = viewModel.imageURL {
+//            screen?.coverImageView.af.setImage(withURL: url)
+//        } else {
+//            screen?.coverImageView.image = UIImage(named: "semcapa")
+//        }
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController, CustomTableViewCellDelegate {
+class HomeVC: UIViewController {
     
     private var homeScreen: HomeScreen?
     private var viewModel: HomeViewModel = HomeViewModel()

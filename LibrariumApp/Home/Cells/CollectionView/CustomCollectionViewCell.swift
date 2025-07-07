@@ -27,16 +27,15 @@ class CustomCollectionViewCell: UICollectionViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(with book: VolumeInfo) {
-        if let urlString = book.imageLinks?.thumbnail?
-                .replacingOccurrences(of: "http://", with: "https://"),
-           let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: encodedString) {
-            loadImage(from: url)
+    public func setupCell(with book: Book) {
+        if let coverId = book.coverId {
+            let urlString = "https://covers.openlibrary.org/b/id/\(coverId)-M.jpg"
+            if let url = URL(string: urlString) {
+                loadImage(from: url)
+            }
         } else {
             self.homeScreen.bookImageView.image = UIImage(named: "semcapa")
         }
-        
     }
     
     private func loadImage(from url: URL) {

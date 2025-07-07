@@ -16,7 +16,34 @@ class HomeViewModel {
     
     private var service: BookService = BookService()
     private var books: [BookData] = []
-    private let categories = ["romance", "fantasy", "horror", "science_fiction", "history", "biography", "children", "young_adult"]
+    private let categories = [
+        "romance",
+        "fantasy",
+        "horror",
+        "science_fiction",
+        "history",
+        "biography",
+        "children",
+        "young_adult",
+        "mystery",
+        "thriller",
+        "adventure",
+        "classics",
+        "comics",
+        "poetry",
+        "art",
+        "music",
+        "philosophy",
+        "religion",
+        "science",
+        "technology",
+        "travel",
+        "cookbooks",
+        "self_help",
+        "health",
+        "sports"
+    ]
+    
     private weak var delegate: HomeViewModelProtocol?
     
     public func delegate(delegate: HomeViewModelProtocol?) {
