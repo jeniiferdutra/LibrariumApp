@@ -9,6 +9,20 @@ import UIKit
 
 class HomeScreen: UIView {
     
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.showsVerticalScrollIndicator = false
+        scroll.isScrollEnabled = true
+        return scroll
+    }()
+
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +108,9 @@ class HomeScreen: UIView {
     private func addViews() {
         addSubview(logoImageView)
         addSubview(searchBar)
-        addSubview(bookImageView)
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(bookImageView)
         bookImageView.addSubview(subTitleLabel)
         addSubview(tableView)
     }
@@ -112,14 +128,27 @@ class HomeScreen: UIView {
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 40),
             
-            bookImageView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
-            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bookImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 250),
+
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+
+            bookImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            bookImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            bookImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bookImageView.heightAnchor.constraint(equalToConstant: 250),
-            
+
             subTitleLabel.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: 16),
             subTitleLabel.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: -16),
             subTitleLabel.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: -20),
+
+            bookImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             tableView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
