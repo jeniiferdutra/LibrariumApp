@@ -9,20 +9,6 @@ import UIKit
 
 class HomeScreen: UIView {
     
-    lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.showsVerticalScrollIndicator = false
-        scroll.isScrollEnabled = true
-        return scroll
-    }()
-
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +20,13 @@ class HomeScreen: UIView {
         imageView.accessibilityLabel = "Librarium App"
         imageView.accessibilityTraits = .staticText
         return imageView
+    }()
+    
+    lazy var bookImageView: UIImageView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "books")
+        return img
     }()
     
     lazy var searchBar: UISearchBar = {
@@ -56,23 +49,6 @@ class HomeScreen: UIView {
         }
         
         return search
-    }()
-    
-    lazy var bookImageView: UIImageView = {
-        let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage(named: "books")
-        return img
-    }()
-    
-    lazy var subTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Explore livros por categoria, descubra novas histórias."
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.numberOfLines = 0
-        return label
     }()
     
     lazy var tableView: UITableView = {
@@ -107,11 +83,8 @@ class HomeScreen: UIView {
     
     private func addViews() {
         addSubview(logoImageView)
+        addSubview(bookImageView)
         addSubview(searchBar)
-        addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubview(bookImageView)
-        bookImageView.addSubview(subTitleLabel)
         addSubview(tableView)
     }
 
@@ -120,37 +93,20 @@ class HomeScreen: UIView {
             
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 115),
-            logoImageView.widthAnchor.constraint(equalToConstant: 260),
-
+            logoImageView.heightAnchor.constraint(equalToConstant: 100),
+            logoImageView.widthAnchor.constraint(equalToConstant: 100),
+            
             searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 40),
-            
-            scrollView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 250),
 
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-
-            bookImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            bookImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            bookImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            bookImageView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
+            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bookImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bookImageView.heightAnchor.constraint(equalToConstant: 250),
-
-            subTitleLabel.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant: 16),
-            subTitleLabel.trailingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: -16),
-            subTitleLabel.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: -20),
-
-            bookImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            tableView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

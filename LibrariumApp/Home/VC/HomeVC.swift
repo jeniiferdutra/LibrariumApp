@@ -26,6 +26,8 @@ class HomeVC: UIViewController {
         viewModel.delegate(delegate: self)
         homeScreen?.configSearchBarDelegate(delegate: self)
         viewModel.fetchRequest()
+        homeScreen?.tableView.estimatedRowHeight = 420
+        homeScreen?.tableView.rowHeight = UITableView.automaticDimension
     }
     
 }
@@ -35,15 +37,14 @@ extension HomeVC: HomeViewModelProtocol {
         DispatchQueue.main.async {
             self.homeScreen?.configTableView(delegate: self, dataSource: self)
             self.homeScreen?.tableView.reloadData()
-        }
     }
+}
     
     func error(message: String) {
         print(#function)
         //MARK: Criar um Alert
     }
 
-    
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
@@ -58,12 +59,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 348
     }
     
 }
+
 extension HomeVC: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         homeScreen?.tableView.reloadData()
     }

@@ -9,21 +9,40 @@ import UIKit
 
 class CustomCollectionViewCellScreen: UIView {
     
-    lazy var cardView: UIView = {
+    lazy var imageContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 15
         return view
     }()
     
-    lazy var bookImageView: UIImageView = {
+    lazy var booksImageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFill
         img.clipsToBounds = true
-        img.layer.cornerRadius = 5
         return img
     }()
-
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appBackGroud
@@ -36,29 +55,40 @@ class CustomCollectionViewCellScreen: UIView {
     }
     
     private func addViews() {
-        addSubview(cardView)
-        cardView.addSubview(bookImageView)
+        addSubview(imageContainerView)
+        imageContainerView.addSubview(booksImageView)
+        addSubview(titleLabel)
+        addSubview(authorLabel)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            cardView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            cardView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            cardView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            cardView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageContainerView.topAnchor.constraint(equalTo: topAnchor),
+            imageContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageContainerView.heightAnchor.constraint(equalToConstant: 210),
             
-            bookImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
-            bookImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
-            bookImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
-            bookImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
+            booksImageView.topAnchor.constraint(equalTo: imageContainerView.topAnchor),
+            booksImageView.leadingAnchor.constraint(equalTo: imageContainerView.leadingAnchor),
+            booksImageView.trailingAnchor.constraint(equalTo: imageContainerView.trailingAnchor),
+            booksImageView.bottomAnchor.constraint(equalTo: imageContainerView.bottomAnchor),
+            
+            titleLabel.topAnchor.constraint(equalTo: imageContainerView.bottomAnchor, constant: 5),
+            titleLabel.leadingAnchor.constraint(equalTo: imageContainerView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: imageContainerView.trailingAnchor),
+            
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            authorLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            authorLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            authorLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -1)
         ])
     }
     
     // MARK: - Acessibilidade
-        public func configureAccessibility(with title: String) {
-            bookImageView.isAccessibilityElement = true
-            bookImageView.accessibilityLabel = "Capa do livro \(title)"
-            bookImageView.accessibilityTraits = .image
-        }
+    public func configureAccessibility(with title: String) {
+        booksImageView.isAccessibilityElement = true
+        booksImageView.accessibilityLabel = "Capa do livro \(title)"
+        booksImageView.accessibilityTraits = .image
+    }
 }

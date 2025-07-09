@@ -17,7 +17,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configScreen()
     }
-       
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,7 +34,14 @@ class CustomCollectionViewCell: UICollectionViewCell {
                 loadImage(from: url)
             }
         } else {
-            self.homeScreen.bookImageView.image = UIImage(named: "semcapa")
+            self.homeScreen.booksImageView.image = UIImage(named: "semcapa")
+        }
+        homeScreen.titleLabel.text = book.title ?? "Titulo desconhecido"
+        if let authors = book.authors, !authors.isEmpty {
+            let names = authors.compactMap { $0.name }.joined(separator: ", ")
+            homeScreen.authorLabel.text = names
+        } else {
+            homeScreen.authorLabel.text = "Autor desconhecido"
         }
     }
     
@@ -43,7 +50,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
             guard let data = data, error == nil,
                   let image = UIImage(data: data) else { return }
             DispatchQueue.main.async {
-                self.homeScreen.bookImageView.image = image
+                self.homeScreen.booksImageView.image = image
             }
         }.resume()
     }

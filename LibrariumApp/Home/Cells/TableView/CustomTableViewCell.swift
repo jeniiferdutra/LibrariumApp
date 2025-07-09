@@ -17,6 +17,7 @@ class CustomTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         configScreen()
         homeScreen.configProtocolsCollectionView(delegate: self, dataSource: self)
     }
@@ -31,7 +32,8 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     public func setupCell(data: BookData) {
-        homeScreen.categoryLabel.text = data.name ?? "Categoria"
+        let category = (data.name ?? "Categoria").capitalizingFirstLetter()
+        homeScreen.categoryLabel.text = category
         self.books = data.works ?? []
         homeScreen.collectionView.reloadData()
     }
@@ -55,6 +57,6 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 230)
+        return CGSize(width: 150, height: 290)
     }
 }

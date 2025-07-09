@@ -13,7 +13,7 @@ class CustomTableViewCellScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         
         label.isAccessibilityElement = true
         label.accessibilityTraits = .staticText
@@ -23,8 +23,8 @@ class CustomTableViewCellScreen: UIView {
     lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
@@ -50,8 +50,8 @@ class CustomTableViewCellScreen: UIView {
     }
     
     private func addViews() {
-        addSubview(collectionView)
         addSubview(categoryLabel)
+        addSubview(collectionView)
     }
     
     private func configConstraints() {
@@ -60,7 +60,7 @@ class CustomTableViewCellScreen: UIView {
             categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
                 
-            collectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 8),
+            collectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 16),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
