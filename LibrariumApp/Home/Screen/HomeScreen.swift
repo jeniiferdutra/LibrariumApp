@@ -22,13 +22,6 @@ class HomeScreen: UIView {
         return imageView
     }()
     
-    lazy var bookImageView: UIImageView = {
-        let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage(named: "books")
-        return img
-    }()
-    
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
@@ -51,11 +44,13 @@ class HomeScreen: UIView {
         return search
     }()
     
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = .appBackGroud
+        tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifier)
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.bounces = false
         return tableView
@@ -83,14 +78,12 @@ class HomeScreen: UIView {
     
     private func addViews() {
         addSubview(logoImageView)
-        addSubview(bookImageView)
         addSubview(searchBar)
         addSubview(tableView)
     }
 
     private func configElements() {
         NSLayoutConstraint.activate([
-            
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 100),
@@ -100,13 +93,8 @@ class HomeScreen: UIView {
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 40),
-
-            bookImageView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
-            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bookImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bookImageView.heightAnchor.constraint(equalToConstant: 250),
             
-            tableView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

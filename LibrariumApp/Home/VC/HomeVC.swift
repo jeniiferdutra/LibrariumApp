@@ -37,28 +37,41 @@ extension HomeVC: HomeViewModelProtocol {
         DispatchQueue.main.async {
             self.homeScreen?.configTableView(delegate: self, dataSource: self)
             self.homeScreen?.tableView.reloadData()
+        }
     }
-}
     
     func error(message: String) {
         print(#function)
         //MARK: Criar um Alert
     }
-
+    
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsInSection
+        return viewModel.numberOfRowsInSection + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
-        cell?.setupCell(data: viewModel.loadCurrentBooks(indexPath: indexPath))
-        return cell ?? UITableViewCell()
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
+                return UITableViewCell()
+            }
+            let data = viewModel.loadCurrentBooks(indexPath: IndexPath(row: indexPath.row - 1, section: indexPath.section))
+            cell.setupCell(data: data)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 250
+        }
         return 348
     }
     
