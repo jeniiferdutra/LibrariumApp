@@ -36,7 +36,7 @@ class CustomTableViewCellScreen: UIView {
     public func configProtocolsCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
             collectionView.delegate = delegate
             collectionView.dataSource = dataSource
-        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

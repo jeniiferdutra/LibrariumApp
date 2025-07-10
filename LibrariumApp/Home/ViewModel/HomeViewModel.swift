@@ -84,8 +84,13 @@ class HomeViewModel {
         return books.count
     }
     
-    public func loadCurrentBooks(indexPath: IndexPath) -> BookData {
+    public func loadCurrentCategory(indexPath: IndexPath) -> BookData {
         return books[indexPath.row]
+    }
+    
+    // Retornar um livro de uma posição específica da célula
+    public func getBook(at indexPath: IndexPath, collectionIndex: Int) -> Book? {
+        return books[indexPath.row].works?[collectionIndex]
     }
 }
 

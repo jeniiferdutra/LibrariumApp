@@ -1,24 +1,16 @@
 //
-//  BookService.swift
+//  BookDetailService.swift
 //  LibrariumApp
 //
-//  Created by Jenifer Rocha on 24/04/25.
+//  Created by Jenifer Rocha on 09/07/25.
 //
 
 import Foundation
 
-enum ErrorDetail: Error {
-    case errorURL(urlString: String)
-    case detailError(detail: String)
-    case requestFailed(error: Error)
-    case invalidResponse
-    case invalidStatusCode(code: Int)
-}
-
-class BookService {
+class BookDetailService {
     
-    func fetchBooks(for category: String, completion: @escaping (Result<BookData, Error>) -> Void) {
-        let urlString = "https://openlibrary.org/subjects/\(category).json"
+    func fetchBookDetail(for key: String, completion: @escaping (Result<BookDetailData, Error>) -> Void) {
+        let urlString = "https://openlibrary.org\(key).json"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(ErrorDetail.errorURL(urlString: urlString)))
@@ -43,8 +35,8 @@ class BookService {
             }
             
             do {
-                let books = try JSONDecoder().decode(BookData.self, from: data)
-                completion(.success(books))
+                let bookDetail = try JSONDecoder().decode(BookDetailData.self, from: data)
+                completion(.success(bookDetail))
             } catch {
                 completion(.failure(error))
             }

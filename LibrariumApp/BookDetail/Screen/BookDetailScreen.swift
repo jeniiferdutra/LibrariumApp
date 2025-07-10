@@ -8,18 +8,18 @@
 import UIKit
 
 class BookDetailScreen: UIView {
-
-    lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "logo2")
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        
-        imageView.isAccessibilityElement = true
-        imageView.accessibilityLabel = "Librarium App"
-        imageView.accessibilityTraits = .staticText
-        return imageView
+    
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.showsVerticalScrollIndicator = false
+        return scroll
+    }()
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var coverImageView: UIImageView = {
@@ -36,9 +36,7 @@ class BookDetailScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 24)
-        label.textAlignment = .left
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
         label.isAccessibilityElement = true
         label.accessibilityTraits = .staticText
         return label
@@ -47,89 +45,66 @@ class BookDetailScreen: UIView {
     lazy var authorsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .left
+        label.lineBreakMode = .byTruncatingTail
         label.isAccessibilityElement = true
         label.accessibilityTraits = .staticText
         return label
     }()
     
-    lazy var publisherLabel: UILabel = {
+    lazy var collectionView: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.backgroundColor = .red
+        cv.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: DetailCollectionViewCell.identifier)
+        return cv
+    }()
+    
+    public func configProtocolsCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
+            collectionView.delegate = delegate
+            collectionView.dataSource = dataSource
+    }
+    
+    lazy var summaryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .left
-        label.isAccessibilityElement = true
-        label.accessibilityTraits = .staticText
+        label.text = "Summary"
+        label.font = UIFont.systemFont(ofSize: 24)
         return label
     }()
     
-    lazy var publishedDateLabel: UILabel = {
+    lazy var summaryTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .left
-        label.isAccessibilityElement = true
-        label.accessibilityTraits = .staticText
-        return label
-    }()
-    
-    lazy var pageCountLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .left
-        label.isAccessibilityElement = true
-        label.accessibilityTraits = .staticText
-        return label
-    }()
-    
-    lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sinopse"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        label.textAlignment = .left
-        label.isAccessibilityElement = true
-        label.accessibilityTraits = .staticText
-        return label
-    }()
-    
-    lazy var descriptionTextLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.isAccessibilityElement = true
-        label.accessibilityTraits = .staticText
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+        backgroundColor = .appBackGroud
         addViews()
         configConstraints()
     }
     
     private func addViews() {
-        addSubview(logoImageView)
-        addSubview(coverImageView)
-        addSubview(titleLabel)
-        addSubview(authorsLabel)
-        addSubview(publisherLabel)
-        addSubview(publishedDateLabel)
-        addSubview(pageCountLabel)
-        addSubview(descriptionLabel)
-        addSubview(descriptionTextLabel)
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(coverImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(authorsLabel)
+        contentView.addSubview(collectionView)
+        contentView.addSubview(summaryLabel)
+        contentView.addSubview(summaryTextLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -138,43 +113,46 @@ class BookDetailScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 115),
-            logoImageView.widthAnchor.constraint(equalToConstant: 260),
             
-            coverImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15),
-            coverImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            
+            coverImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            coverImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             coverImageView.heightAnchor.constraint(equalToConstant: 230),
             coverImageView.widthAnchor.constraint(equalToConstant: 150),
             
-            titleLabel.topAnchor.constraint(equalTo: coverImageView.topAnchor, constant: 40),
-            titleLabel.leadingAnchor.constraint(equalTo: coverImageView.trailingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            titleLabel.centerYAnchor.constraint(equalTo: coverImageView.centerYAnchor, constant: -12),
+            titleLabel.leadingAnchor.constraint(equalTo: coverImageView.trailingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            authorsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3),
+            authorsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 6),
             authorsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             authorsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
-            publisherLabel.topAnchor.constraint(equalTo: authorsLabel.bottomAnchor, constant: 3),
-            publisherLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            publisherLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: coverImageView.bottomAnchor, constant: 15),
+            collectionView.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            collectionView.heightAnchor.constraint(equalToConstant: 100),
             
-            publishedDateLabel.topAnchor.constraint(equalTo: publisherLabel.bottomAnchor, constant: 3),
-            publishedDateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            publishedDateLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            summaryLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 15),
+            summaryLabel.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),
             
-            pageCountLabel.topAnchor.constraint(equalTo: publishedDateLabel.bottomAnchor, constant: 3),
-            pageCountLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            pageCountLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            summaryTextLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 15),
+            summaryTextLabel.leadingAnchor.constraint(equalTo: summaryLabel.leadingAnchor),
+            summaryTextLabel.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
             
-            descriptionLabel.topAnchor.constraint(equalTo: coverImageView.bottomAnchor, constant: 17),
-            descriptionLabel.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),
+            // 👇 Importante sempre alterar quando adicionar um novo elemento
+            summaryTextLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
             
-            descriptionTextLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
-            descriptionTextLabel.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),
-            descriptionTextLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
-        
         ])
     }
     

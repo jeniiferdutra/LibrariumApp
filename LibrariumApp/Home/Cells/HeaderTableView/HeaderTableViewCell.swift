@@ -14,7 +14,6 @@ class HeaderTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configScreen()
     }
     
@@ -26,7 +25,4 @@ class HeaderTableViewCell: UITableViewCell {
         contentView.addSubview(homeScreen)
         homeScreen.pin(to: contentView)
     }
-    
-    
-
 }

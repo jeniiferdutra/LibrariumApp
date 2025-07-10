@@ -7,8 +7,18 @@
 
 import UIKit
 
+protocol CustomTableViewCellDelegate: AnyObject {
+    func didSelectBook(_ book: Book)
+}
 
 class CustomTableViewCell: UITableViewCell {
+    
+    public weak var delegate: CustomTableViewCellDelegate?
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        delegate?.didSelectBook(book)
+    }
         
     static let identifier: String = "CustomTableViewCell"
     
