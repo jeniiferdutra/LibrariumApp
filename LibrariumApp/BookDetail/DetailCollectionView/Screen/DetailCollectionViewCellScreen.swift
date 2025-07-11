@@ -86,6 +86,32 @@ class DetailCollectionViewCellScreen: UIView {
         label.textAlignment = .center
         return label
     }()
+    
+    lazy var pagesTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Number of pages"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var pagesImageView: UIImageView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(systemName: "book.pages")
+        return img
+    }()
+    
+    lazy var pagesLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.textAlignment = .center
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -107,18 +133,21 @@ class DetailCollectionViewCellScreen: UIView {
         addSubview(publisherTitleLabel)
         addSubview(publisherImageView)
         addSubview(publisherLabel)
+        addSubview(pagesTitleLabel)
+        addSubview(pagesImageView)
+        addSubview(pagesLabel)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
             publishDateTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            publishDateTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            publishDateTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             
             publishDateImageView.topAnchor.constraint(equalTo: publishDateTitleLabel.bottomAnchor, constant: 5),
-            publishDateImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            publishDateImageView.centerXAnchor.constraint(equalTo: publishDateTitleLabel.centerXAnchor),
             
             publishDateLabel.topAnchor.constraint(equalTo: publishDateImageView.bottomAnchor, constant: 5),
-            publishDateLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            publishDateLabel.centerXAnchor.constraint(equalTo: publishDateImageView.centerXAnchor),
             
             languageTitleLabel.topAnchor.constraint(equalTo: publishDateTitleLabel.topAnchor),
             languageTitleLabel.leadingAnchor.constraint(equalTo: publishDateTitleLabel.trailingAnchor, constant: 30),
@@ -137,6 +166,16 @@ class DetailCollectionViewCellScreen: UIView {
             
             publisherLabel.topAnchor.constraint(equalTo: publisherImageView.bottomAnchor, constant: 5),
             publisherLabel.centerXAnchor.constraint(equalTo: publisherImageView.centerXAnchor),
+            
+            pagesTitleLabel.topAnchor.constraint(equalTo: publisherTitleLabel.topAnchor),
+            pagesTitleLabel.leadingAnchor.constraint(equalTo: publisherTitleLabel.trailingAnchor, constant: 30),
+            
+            pagesImageView.topAnchor.constraint(equalTo: pagesTitleLabel.bottomAnchor, constant: 5),
+            pagesImageView.centerXAnchor.constraint(equalTo: pagesTitleLabel.centerXAnchor),
+            
+            pagesLabel.topAnchor.constraint(equalTo: pagesImageView.bottomAnchor, constant: 5),
+            pagesLabel.centerXAnchor.constraint(equalTo: pagesImageView.centerXAnchor),
+            
         ])
     }
 }

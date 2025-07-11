@@ -17,8 +17,8 @@ enum ErrorDetail: Error {
 
 class BookService {
     
-    func fetchBooks(for category: String, completion: @escaping (Result<BookData, Error>) -> Void) {
-        let urlString = "https://openlibrary.org/subjects/\(category).json"
+    func fetchBooksByCategory(for category: String, completion: @escaping (Result<BookData, Error>) -> Void) {
+        let urlString = "https://www.googleapis.com/books/v1/volumes?q=subject:\(category)&key=AIzaSyBMx7mkzxROsxUkZPJY8TJkX51vCMNDBwo"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(ErrorDetail.errorURL(urlString: urlString)))

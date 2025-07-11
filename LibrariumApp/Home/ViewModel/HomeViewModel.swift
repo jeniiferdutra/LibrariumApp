@@ -16,6 +16,7 @@ class HomeViewModel {
     
     private var service: BookService = BookService()
     private var books: [BookData] = []
+    private var booksByCategory: [String: [Item]] = [:]
     private let categories = [
         "romance",
         "fantasy",
@@ -52,15 +53,15 @@ class HomeViewModel {
     
     public func fetchRequest() {
         let group = DispatchGroup()
-        var tempBooks: [BookData] = []
         var errorOccurred = false
         
         for category in categories {
             group.enter()
-            service.fetchBooks(for: category) { result in
+            service.fetchBooksByCategory(for: category) { result in
                 switch result {
-                case .success(let bookData):
-                    tempBooks.append(bookData)
+                case .success(let librariumBook):
+                    let items = librariumBook.items ?? []
+                    self.booksByCategory[category] = items
                 case .failure(let error):
                     print("Erro ao buscar \(category): \(error.localizedDescription)")
                     errorOccurred = true
@@ -70,8 +71,7 @@ class HomeViewModel {
         }
         
         group.notify(queue: .main) { [weak self] in
-            guard let self else { return }
-            self.books = tempBooks
+            guard let self = self else { return }
             if errorOccurred {
                 self.delegate?.error(message: "Erro ao buscar algumas categorias.")
             } else {
@@ -80,17 +80,22 @@ class HomeViewModel {
         }
     }
     
-    public var numberOfRowsInSection: Int {
-        return books.count
+    public var numberOfSections: Int {
+        return categories.count
     }
     
-    public func loadCurrentCategory(indexPath: IndexPath) -> BookData {
-        return books[indexPath.row]
+    public func loadCurrentCategory(indexPath: IndexPath) -> Item? {
+        let category = categories[indexPath.section]
+        return booksByCategory[category]?[indexPath.row]
     }
     
-    // Retornar um livro de uma posição específica da célula
-    public func getBook(at indexPath: IndexPath, collectionIndex: Int) -> Book? {
-        return books[indexPath.row].works?[collectionIndex]
+    public func getCategoryName(at index: Int) -> String {
+        return categories[index]
+    }
+
+    public func getBooksForCategory(at index: Int) -> [Item] {
+        let category = categories[index]
+        return booksByCategory[category] ?? []
     }
 }
 

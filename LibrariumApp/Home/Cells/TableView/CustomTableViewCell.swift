@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CustomTableViewCellDelegate: AnyObject {
-    func didSelectBook(_ book: Book)
+    func didSelectBook(_ book: Item)
 }
 
 class CustomTableViewCell: UITableViewCell {
@@ -23,7 +23,7 @@ class CustomTableViewCell: UITableViewCell {
     static let identifier: String = "CustomTableViewCell"
     
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
-    private var books: [Book] = []
+    private var books: [Item] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,10 +41,9 @@ class CustomTableViewCell: UITableViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(data: BookData) {
-        let category = (data.name ?? "Categoria").capitalizingFirstLetter()
-        homeScreen.categoryLabel.text = category
-        self.books = data.works ?? []
+    public func setupCell(categoryName: String, books: [Item]) {
+        homeScreen.categoryLabel.text = categoryName.capitalizingFirstLetter()
+        self.books = books 
         homeScreen.collectionView.reloadData()
     }
     

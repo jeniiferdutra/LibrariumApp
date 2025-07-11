@@ -27,21 +27,23 @@ class CustomCollectionViewCell: UICollectionViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(with book: Book) {
-        if let coverId = book.coverId {
-            let urlString = "https://covers.openlibrary.org/b/id/\(coverId)-M.jpg"
-            if let url = URL(string: urlString) {
-                loadImage(from: url)
-            }
+    public func setupCell(with book: Item) {
+        self.homeScreen.booksImageView.image = nil
+        
+        if let urlString = book.volumeInfo?.imageLinks?.thumbnail?.replacingOccurrences(of: "http://", with: "https://"),
+           let url = URL(string: urlString) {
+            loadImage(from: url)
         } else {
             self.homeScreen.booksImageView.image = UIImage(named: "semcapa")
         }
-        homeScreen.titleLabel.text = book.title ?? "Titulo desconhecido"
-        if let authors = book.authors, !authors.isEmpty {
-            let names = authors.compactMap { $0.name }.joined(separator: ", ")
+        
+        homeScreen.titleLabel.text = book.volumeInfo?.title ?? "Unknown title"
+        
+        if let authors = book.volumeInfo?.authors, !authors.isEmpty {
+            let names = authors.joined(separator: ", ")
             homeScreen.authorLabel.text = names
         } else {
-            homeScreen.authorLabel.text = "Autor desconhecido"
+            homeScreen.authorLabel.text = "Unknown author"
         }
     }
     
