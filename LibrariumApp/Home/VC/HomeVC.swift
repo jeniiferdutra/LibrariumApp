@@ -65,8 +65,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             let index = indexPath.row - 1
             let category = viewModel.getCategoryName(at: index)
             let books = viewModel.getBooksForCategory(at: index)
+            cell.delegate = self
             cell.setupCell(categoryName: category, books: books)
-            // cell.delegate = self
             return cell
         }
     }
@@ -79,24 +79,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//extension HomeVC: CustomTableViewCellDelegate {
-//    func didSelectBook(_ book: Item) {
-//        guard let key = book.key else { return }
-//
-//        BookDetailService().fetchBookDetail(for: key) { result in
-//            switch result {
-//            case .success(let detailData):
-//                DispatchQueue.main.async {
-//                    let viewModel = BookDetailViewModel(book: book)
-//                    let detailVC = BookDetailVC(viewModel: viewModel)
-//                    self.navigationController?.pushViewController(detailVC, animated: true)
-//                }
-//            case .failure(let error):
-//                print("Erro ao buscar detalhes: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//}
+extension HomeVC: CustomTableViewCellDelegate {
+    func didSelectBook(_ book: Item) {
+        guard let key = book.id else { return }
+        let viewModel = BookDetailViewModel(volumeId: key)
+        let detailVC = BookDetailVC(viewModel: viewModel)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
 
 extension HomeVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

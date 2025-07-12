@@ -13,13 +13,7 @@ protocol CustomTableViewCellDelegate: AnyObject {
 
 class CustomTableViewCell: UITableViewCell {
     
-    public weak var delegate: CustomTableViewCellDelegate?
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let book = books[indexPath.row]
-        delegate?.didSelectBook(book)
-    }
-        
+    public weak var delegate: CustomTableViewCellDelegate?        
     static let identifier: String = "CustomTableViewCell"
     
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
@@ -63,6 +57,11 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let book = books[indexPath.row]
         cell.setupCell(with: book)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        delegate?.didSelectBook(book)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

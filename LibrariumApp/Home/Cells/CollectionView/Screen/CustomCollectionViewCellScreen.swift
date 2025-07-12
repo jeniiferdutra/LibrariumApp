@@ -37,7 +37,7 @@ class CustomCollectionViewCellScreen: UIView {
     lazy var authorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .lightGray
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
