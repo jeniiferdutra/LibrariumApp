@@ -80,6 +80,19 @@ class HomeViewModel {
         }
     }
     
+    func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {
+        service.searchBooks(with: query) { result in
+            switch result {
+            case .success(let data):
+                let items = data.items ?? []
+                completion(items)
+            case .failure(let error):
+                print("Search error: \(error.localizedDescription)")
+                completion([])
+            }
+        }
+    }
+    
     public var numberOfSections: Int {
         return categories.count
     }

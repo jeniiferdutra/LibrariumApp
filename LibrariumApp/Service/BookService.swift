@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum ErrorDetail: Error {
     case errorURL(urlString: String)
@@ -51,5 +52,18 @@ class BookService {
         }
         task.resume()
     }
+    
+    func searchBooks(with query: String, completion: @escaping (Result<BookData, Error>) -> Void) {
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://www.googleapis.com/books/v1/volumes?q=\(encodedQuery)"
+        
+        AF.request(urlString).responseDecodable(of: BookData.self) { response in
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
-

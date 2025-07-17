@@ -190,7 +190,7 @@ class BookDetailScreen: UIView {
             collectionView.topAnchor.constraint(equalTo: topSeparatorView.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            collectionView.heightAnchor.constraint(equalToConstant: 100),
+            collectionView.heightAnchor.constraint(equalToConstant: 85),
             
             bottomSeparatorView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             bottomSeparatorView.leadingAnchor.constraint(equalTo: coverImageView.leadingAnchor),

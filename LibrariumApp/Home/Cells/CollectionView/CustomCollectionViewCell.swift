@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
@@ -27,24 +28,14 @@ class CustomCollectionViewCell: UICollectionViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(with book: Item) {
-        self.homeScreen.booksImageView.image = nil
-        
-        if let urlString = book.volumeInfo?.imageLinks?.thumbnail?.replacingOccurrences(of: "http://", with: "https://"),
-           let url = URL(string: urlString) {
-            loadImage(from: url)
+    public func setupCell(with viewModel: CustomCollectionViewViewModel) {
+        if let url = viewModel.imageURL {
+            homeScreen.booksImageView.af.setImage(withURL: url)
         } else {
-            self.homeScreen.booksImageView.image = UIImage(named: "semcapa")
+            homeScreen.booksImageView.image = UIImage(named: "semcapa")
         }
-        
-        homeScreen.titleLabel.text = book.volumeInfo?.title ?? "Unknown title"
-        
-        if let authors = book.volumeInfo?.authors, !authors.isEmpty {
-            let names = authors.joined(separator: ", ")
-            homeScreen.authorLabel.text = names
-        } else {
-            homeScreen.authorLabel.text = "Unknown author"
-        }
+        homeScreen.titleLabel.text = viewModel.title
+        homeScreen.authorLabel.text = viewModel.author
     }
     
     private func loadImage(from url: URL) {

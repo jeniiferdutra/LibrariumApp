@@ -13,7 +13,7 @@ protocol CustomTableViewCellDelegate: AnyObject {
 
 class CustomTableViewCell: UITableViewCell {
     
-    public weak var delegate: CustomTableViewCellDelegate?        
+    public weak var delegate: CustomTableViewCellDelegate?
     static let identifier: String = "CustomTableViewCell"
     
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
@@ -37,7 +37,7 @@ class CustomTableViewCell: UITableViewCell {
     
     public func setupCell(categoryName: String, books: [Item]) {
         homeScreen.categoryLabel.text = categoryName.capitalizingFirstLetter()
-        self.books = books 
+        self.books = books
         homeScreen.collectionView.reloadData()
     }
     
@@ -53,9 +53,10 @@ extension CustomTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
-
+        
         let book = books[indexPath.row]
-        cell.setupCell(with: book)
+        let viewModel = CustomCollectionViewViewModel(volumeInfo: book.volumeInfo)
+        cell.setupCell(with: viewModel)
         return cell
     }
     
