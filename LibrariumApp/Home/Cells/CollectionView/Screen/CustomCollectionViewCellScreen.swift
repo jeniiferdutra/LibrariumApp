@@ -85,6 +85,16 @@ class CustomCollectionViewCellScreen: UIView {
         ])
     }
     
+    func apply(viewModel: CustomCollectionViewViewModel) {
+        if let url = viewModel.imageURL {
+            booksImageView.af.setImage(withURL: url, placeholderImage: viewModel.fallbackImage)
+        } else {
+            booksImageView.image = viewModel.fallbackImage
+        }
+        titleLabel.text = viewModel.title
+        authorLabel.text = viewModel.author
+    }
+    
     // MARK: - Acessibilidade
     public func configureAccessibility(with title: String) {
         booksImageView.isAccessibilityElement = true

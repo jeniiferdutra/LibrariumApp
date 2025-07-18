@@ -15,8 +15,8 @@ protocol HomeViewModelProtocol: AnyObject {
 class HomeViewModel {
     
     private var service: BookService = BookService()
-    private var books: [BookData] = []
     private var booksByCategory: [String: [Item]] = [:]
+    private var searchResults: [Item] = []
     private let categories = [
         "romance",
         "fantasy",
@@ -81,31 +81,32 @@ class HomeViewModel {
     }
     
     func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {
-        service.searchBooks(with: query) { result in
+        service.searchBooks(with: query) { [weak self] result in
             switch result {
-            case .success(let data):
-                let items = data.items ?? []
+            case .success(let books):
+                let items = books.items ?? []
+                self?.searchResults = items
                 completion(items)
             case .failure(let error):
-                print("Search error: \(error.localizedDescription)")
+                print("Erro na busca: \(error.localizedDescription)")
                 completion([])
             }
         }
+        
+    }
+    
+    public func getSearchResults() -> [Item] {
+        return searchResults
     }
     
     public var numberOfSections: Int {
         return categories.count
     }
     
-    public func loadCurrentCategory(indexPath: IndexPath) -> Item? {
-        let category = categories[indexPath.section]
-        return booksByCategory[category]?[indexPath.row]
-    }
-    
     public func getCategoryName(at index: Int) -> String {
         return categories[index]
     }
-
+    
     public func getBooksForCategory(at index: Int) -> [Item] {
         let category = categories[index]
         return booksByCategory[category] ?? []

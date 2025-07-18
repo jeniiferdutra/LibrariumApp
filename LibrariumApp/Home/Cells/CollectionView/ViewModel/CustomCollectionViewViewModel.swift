@@ -12,13 +12,14 @@ class CustomCollectionViewViewModel {
     let imageURL: URL?
     let title: String
     let author: String
+    let fallbackImage = UIImage(named: "semcapa") ?? UIImage()
     
     init(volumeInfo: VolumeInfo?) {
         if let urlString = volumeInfo?.imageLinks?.thumbnail?.replacingOccurrences(of: "http://", with: "https://") {
-             self.imageURL = URL(string: urlString)
-         } else {
-             self.imageURL = nil
-         }
+            self.imageURL = URL(string: urlString)
+        } else {
+            self.imageURL = nil
+        }
         self.title = volumeInfo?.title ?? "Unknown"
         self.author = volumeInfo?.authors?.joined(separator: ", ") ?? "Unknown"
     }

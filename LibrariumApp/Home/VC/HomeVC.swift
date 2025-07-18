@@ -30,6 +30,12 @@ class HomeVC: UIViewController {
         viewModel.fetchRequest()
         homeScreen?.tableView.estimatedRowHeight = 420
         homeScreen?.tableView.rowHeight = UITableView.automaticDimension
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
@@ -54,40 +60,41 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if isSearching {
             return 1
         } else {
-            return viewModel.numberOfSections + 1 // com header
+            return viewModel.numberOfSections + 1
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if !isSearching && indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell else {
+        if isSearching {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
                 return UITableViewCell()
             }
+            cell.setupCell(categoryName: "Result", books: searchResults)
+            cell.delegate = self
             return cell
-        }
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        if isSearching {
-            cell.setupCell(categoryName: "Results", books: searchResults)
         } else {
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell else {
+                    return UITableViewCell()
+                }
+                return cell
+            }
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
+                return UITableViewCell()
+            }
+            
             let index = indexPath.row - 1
             let category = viewModel.getCategoryName(at: index)
             let books = viewModel.getBooksForCategory(at: index)
             cell.setupCell(categoryName: category, books: books)
+            cell.delegate = self
+            return cell
         }
-        
-        cell.delegate = self
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 250
-        }
-        return 348
+        return indexPath.row == 0 && !isSearching ? 250 : 348
     }
 }
 
@@ -104,21 +111,20 @@ extension HomeVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             isSearching = false
+            searchResults.removeAll()
             homeScreen?.tableView.reloadData()
-        }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text, !query.isEmpty else { return }
-        searchBar.resignFirstResponder()
-        
-        isSearching = true
-        viewModel.searchBooks(with: query) { [weak self] results in
-            DispatchQueue.main.async {
-                self?.searchResults = results
-                self?.homeScreen?.tableView.reloadData()
+        } else {
+            isSearching = true
+            viewModel.searchBooks(with: searchText) { results in
+                DispatchQueue.main.async {
+                    self.searchResults = results
+                    self.homeScreen?.tableView.reloadData()
+                }
             }
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }

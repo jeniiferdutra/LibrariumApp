@@ -29,13 +29,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     public func setupCell(with viewModel: CustomCollectionViewViewModel) {
-        if let url = viewModel.imageURL {
-            homeScreen.booksImageView.af.setImage(withURL: url)
-        } else {
-            homeScreen.booksImageView.image = UIImage(named: "semcapa")
-        }
-        homeScreen.titleLabel.text = viewModel.title
-        homeScreen.authorLabel.text = viewModel.author
+        homeScreen.apply(viewModel: viewModel)
+        homeScreen.configureAccessibility(with: viewModel.title)
     }
     
     private func loadImage(from url: URL) {
