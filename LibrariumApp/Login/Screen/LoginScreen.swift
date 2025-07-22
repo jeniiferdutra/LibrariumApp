@@ -105,6 +105,17 @@ class LoginScreen: UIView {
         self.delegate?.tappedLoginButton()
     }
     
+    lazy var googleButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius = 25
+        btn.tintColor = .white
+        btn.setImage(UIImage(named: "google"), for: .normal)
+        //btn.addTarget(self, action: #selector(tappedCloseButton), for: .touchUpInside)
+        return btn
+    }()
+    
     lazy var registerLabel: UILabel = {
         let register = UILabel()
         register.translatesAutoresizingMaskIntoConstraints = false
@@ -147,6 +158,7 @@ class LoginScreen: UIView {
         addSubview(passwordLabel)
         addSubview(passwordTextField)
         addSubview(loginButton)
+        addSubview(googleButton)
         addSubview(registerLabel)
         addSubview(registerButton)
     }
@@ -183,7 +195,12 @@ class LoginScreen: UIView {
             loginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
             loginButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-            registerLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 50),
+            googleButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+            googleButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            googleButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+            googleButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            
+            registerLabel.topAnchor.constraint(equalTo: googleButton.bottomAnchor, constant: 50),
             registerLabel.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
             
             registerButton.topAnchor.constraint(equalTo: registerLabel.bottomAnchor),
