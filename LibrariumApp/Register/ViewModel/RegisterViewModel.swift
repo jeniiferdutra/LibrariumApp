@@ -18,7 +18,7 @@ class RegisterViewModel {
     private weak var delegate: RegisterViewModelProtocol?
     private var auth = Auth.auth()
     
-    public func delegate(delegate: RegisterViewModelProtocol?) { // MARK: Método para assinar o nosso protocolo
+    public func delegate(delegate: RegisterViewModelProtocol?) {
         self.delegate = delegate
     }
     

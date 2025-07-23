@@ -9,6 +9,8 @@ import UIKit
 
 protocol LoginScreenProtocol: AnyObject {
     func tappedLoginButton()
+    func tappedGoogleButton()
+    func tappedGithubButton()
     func tappedRegisterButton()
 }
 
@@ -105,16 +107,40 @@ class LoginScreen: UIView {
         self.delegate?.tappedLoginButton()
     }
     
+    lazy var signInLabel: UILabel = {
+        let signIn = UILabel()
+        signIn.translatesAutoresizingMaskIntoConstraints = false
+        signIn.text = "Or sign in with"
+        signIn.textColor = .black
+        signIn.font = UIFont.systemFont(ofSize: 15)
+        return signIn
+    }()
+    
     lazy var googleButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.clipsToBounds = true
-        btn.layer.cornerRadius = 25
-        btn.tintColor = .white
-        btn.setImage(UIImage(named: "google"), for: .normal)
-        //btn.addTarget(self, action: #selector(tappedCloseButton), for: .touchUpInside)
+        btn.tintColor = .lightGray
+        btn.setImage(UIImage(named: "google")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(tappedGoogleButton), for: .touchUpInside)
         return btn
     }()
+    
+    @objc func tappedGoogleButton() {
+        self.delegate?.tappedGoogleButton()
+    }
+    
+    lazy var githubButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tintColor = .lightGray
+        btn.setImage(UIImage(named: "github")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(tappedGithubButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func tappedGithubButton() {
+        self.delegate?.tappedGithubButton()
+    }
     
     lazy var registerLabel: UILabel = {
         let register = UILabel()
@@ -158,7 +184,9 @@ class LoginScreen: UIView {
         addSubview(passwordLabel)
         addSubview(passwordTextField)
         addSubview(loginButton)
+        addSubview(signInLabel)
         addSubview(googleButton)
+        addSubview(githubButton)
         addSubview(registerLabel)
         addSubview(registerButton)
     }
@@ -195,10 +223,18 @@ class LoginScreen: UIView {
             loginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
             loginButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-            googleButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
-            googleButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
-            googleButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-            googleButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            signInLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+            signInLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            googleButton.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 15),
+            googleButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -30),
+            googleButton.heightAnchor.constraint(equalToConstant: 45),
+            googleButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            githubButton.topAnchor.constraint(equalTo: googleButton.topAnchor),
+            githubButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 30),
+            githubButton.heightAnchor.constraint(equalToConstant: 45),
+            githubButton.widthAnchor.constraint(equalToConstant: 45),
             
             registerLabel.topAnchor.constraint(equalTo: googleButton.bottomAnchor, constant: 50),
             registerLabel.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),

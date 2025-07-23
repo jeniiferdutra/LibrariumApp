@@ -27,6 +27,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         viewModel.delegate(delegate: self)
         homeScreen?.configSearchBarDelegate(delegate: self)
+        homeScreen?.delegate(delegate: self)
         viewModel.fetchRequest()
         homeScreen?.tableView.estimatedRowHeight = 420
         homeScreen?.tableView.rowHeight = UITableView.automaticDimension
@@ -52,6 +53,14 @@ extension HomeVC: HomeViewModelProtocol {
         print(#function)
         //MARK: Criar um Alert
     }
+    
+}
+
+extension HomeVC: HomeScreenProtocol {
+    func tappedLogoutButton() {
+        dismiss(animated: true)
+    }
+    
     
 }
 

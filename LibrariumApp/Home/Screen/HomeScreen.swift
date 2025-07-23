@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol HomeScreenProtocol: AnyObject {
+    func tappedLogoutButton()
+}
+
 class HomeScreen: UIView {
+    
+    private weak var delegate: HomeScreenProtocol?
+    
+    public func delegate(delegate: HomeScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -21,6 +31,22 @@ class HomeScreen: UIView {
         imageView.accessibilityTraits = .staticText
         return imageView
     }()
+    
+    lazy var logoutButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Exit", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        btn.setTitleColor(.black, for: .normal)
+        btn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+        btn.tintColor = .black
+        btn.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func tappedLogoutButton() {
+        self.delegate?.tappedLogoutButton()
+    }
     
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
@@ -66,6 +92,7 @@ class HomeScreen: UIView {
     
     private func addViews() {
         addSubview(logoImageView)
+        addSubview(logoutButton)
         addSubview(searchBar)
         addSubview(tableView)
     }
@@ -76,6 +103,9 @@ class HomeScreen: UIView {
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 100),
             logoImageView.widthAnchor.constraint(equalToConstant: 100),
+            
+            logoutButton.topAnchor.constraint(equalTo: logoImageView.topAnchor),
+            logoutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             
             searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

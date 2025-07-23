@@ -57,11 +57,10 @@ extension RegisterVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        let name: String = registerScreen?.nameTextField.text ?? ""
         let email: String = registerScreen?.emailTextField.text ?? ""
         let password: String = registerScreen?.passwordTextField.text ?? ""
         
-        if !name.isEmpty && !email.isEmpty && !password.isEmpty {
+        if !email.isEmpty && !password.isEmpty {
             registerScreen?.registerButton.isEnabled = true
             registerScreen?.registerButton.backgroundColor = .black
         } else {
@@ -71,9 +70,12 @@ extension RegisterVC: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
-        textField.resignFirstResponder()
-        return false
+        if textField == registerScreen?.emailTextField {
+            registerScreen?.passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
 }
