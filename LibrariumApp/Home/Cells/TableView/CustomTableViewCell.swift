@@ -21,7 +21,6 @@ class CustomTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configScreen()
         homeScreen.configProtocolsCollectionView(delegate: self, dataSource: self)
     }

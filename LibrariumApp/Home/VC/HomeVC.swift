@@ -32,6 +32,7 @@ class HomeVC: UIViewController {
         homeScreen?.tableView.estimatedRowHeight = 420
         homeScreen?.tableView.rowHeight = UITableView.automaticDimension
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -60,7 +61,6 @@ extension HomeVC: HomeScreenProtocol {
     func tappedLogoutButton() {
         dismiss(animated: true)
     }
-    
     
 }
 
@@ -109,10 +109,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeVC: CustomTableViewCellDelegate {
     func didSelectBook(_ book: Item) {
-        guard let key = book.id else { return }
-        let viewModel = BookDetailViewModel(volumeId: key)
+        guard let id = book.id else { return }
+        let viewModel = BookDetailViewModel(volumeId: id)
         let detailVC = BookDetailVC(viewModel: viewModel)
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        present(detailVC, animated: true)
     }
 }
 
