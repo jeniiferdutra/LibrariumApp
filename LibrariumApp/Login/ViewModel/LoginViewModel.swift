@@ -28,6 +28,7 @@ class LoginViewModel {
         self.delegate = delegate
     }
     
+    // MARK: - Email/Password Login
     public func login(email: String, password: String) {
         auth.signIn(withEmail: email, password: password) { authResult, error in
             if error == nil {
@@ -40,6 +41,7 @@ class LoginViewModel {
         }
     }
     
+    // MARK: - Google Login
     public func loginWithGoogle(presentingViewController: UIViewController) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
             delegate?.errorGoogleLogin(errorMessage: "ClientID Firebase não encontrado.")
@@ -75,19 +77,20 @@ class LoginViewModel {
         }
     }
     
-    func loginWithGitHub(presentingViewController: UIViewController) {
-            let clientID = "Ov23li6vYGAPMuwyfgl7"
-            let redirectURI = "https://cointracker-e726b.firebaseapp.com/__/auth/handler"
-            let scope = "read:user user:email"
-            let state = UUID().uuidString
-            
-            let urlString = """
+    // MARK: - GitHub Login
+    public func loginWithGitHub(presentingViewController: UIViewController) {
+        let clientID = "Ov23li6vYGAPMuwyfgl7"
+        let redirectURI = "https://cointracker-e726b.firebaseapp.com/__/auth/handler"
+        let scope = "read:user user:email"
+        let state = UUID().uuidString
+        
+        let urlString = """
             https://github.com/login/oauth/authorize?client_id=\(clientID)&redirect_uri=\(redirectURI)&scope=\(scope)&state=\(state)
             """
-            
-            if let url = URL(string: urlString) {
-                let safariVC = SFSafariViewController(url: url)
-                presentingViewController.present(safariVC, animated: true, completion: nil)
-            }
+        
+        if let url = URL(string: urlString) {
+            let safariVC = SFSafariViewController(url: url)
+            presentingViewController.present(safariVC, animated: true, completion: nil)
         }
+    }
 }

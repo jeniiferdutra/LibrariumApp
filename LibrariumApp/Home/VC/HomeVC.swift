@@ -25,19 +25,13 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dismissKeyboard()
         viewModel.delegate(delegate: self)
         homeScreen?.configSearchBarDelegate(delegate: self)
         homeScreen?.delegate(delegate: self)
         viewModel.fetchRequest()
         homeScreen?.tableView.estimatedRowHeight = 420
         homeScreen?.tableView.rowHeight = UITableView.automaticDimension
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
     }
     
 }

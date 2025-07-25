@@ -14,39 +14,21 @@ protocol HomeViewModelProtocol: AnyObject {
 
 class HomeViewModel {
     
+    // MARK: - Private Properties
     private var service: BookService = BookService()
     private var booksByCategory: [String: [Item]] = [:]
     private var searchResults: [Item] = []
     private let categories = [
-        "romance",
-        "fantasy",
-        "horror",
-        "science_fiction",
-        "history",
-        "biography",
-        "children",
-        "young_adult",
-        "mystery",
-        "thriller",
-        "adventure",
-        "classics",
-        "comics",
-        "poetry",
-        "art",
-        "music",
-        "philosophy",
-        "religion",
-        "science",
-        "technology",
-        "travel",
-        "cookbooks",
-        "self_help",
-        "health",
-        "sports"
+        "romance", "fantasy", "horror", "science_fiction", "history",
+        "biography", "children", "young_adult", "mystery", "thriller",
+        "adventure", "classics", "comics", "poetry", "art",
+        "music", "philosophy", "religion", "science", "technology",
+        "travel", "cookbooks", "self_help", "health", "sports"
     ]
     
     private weak var delegate: HomeViewModelProtocol?
     
+    // MARK: - Public Methods
     public func delegate(delegate: HomeViewModelProtocol?) {
         self.delegate = delegate
     }
@@ -80,7 +62,7 @@ class HomeViewModel {
         }
     }
     
-    func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {
+    public func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {
         service.searchBooks(with: query) { [weak self] result in
             switch result {
             case .success(let books):

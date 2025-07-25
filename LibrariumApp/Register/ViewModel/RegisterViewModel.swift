@@ -22,6 +22,7 @@ class RegisterViewModel {
         self.delegate = delegate
     }
     
+    // MARK: - Email/Password Login
     public func registerUser(email: String, password: String) {
         auth.createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {

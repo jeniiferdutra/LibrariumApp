@@ -53,12 +53,12 @@ class LoginScreen: UIView {
         email.translatesAutoresizingMaskIntoConstraints = false
         email.autocorrectionType = .no
         email.backgroundColor = .white
-        email.borderStyle = .none
         email.borderStyle = .roundedRect
         email.keyboardType = .emailAddress
         email.placeholder = "Your email"
         email.textColor = .darkGray
-        email.layer.borderWidth = 0.2
+        email.layer.borderWidth = 1
+        email.layer.borderColor = UIColor.white.cgColor
         email.clipsToBounds = true
         email.layer.cornerRadius = 10
         return email
@@ -82,7 +82,8 @@ class LoginScreen: UIView {
         password.placeholder = "Your Password"
         password.isSecureTextEntry = true
         password.textColor = .darkGray
-        password.layer.borderWidth = 0.2
+        password.layer.borderWidth = 1
+        password.layer.borderColor = UIColor.white.cgColor
         password.clipsToBounds = true
         password.layer.cornerRadius = 10
         password.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 0))

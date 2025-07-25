@@ -8,12 +8,12 @@
 import UIKit
 
 class DetailCollectionViewViewModel {
-    let publishedDate: String
-    let language: String
-    let publisher: String
-    let pageCount: String
-    let isbn: String
-    let printType: String
+    public let publishedDate: String
+    public let language: String
+    public let publisher: String
+    public let pageCount: String
+    public let isbn: String
+    public let printType: String
 
     init(volumeInfo: VolumeInfo?) {
         self.publishedDate = volumeInfo?.publishedDate ?? "00/00"

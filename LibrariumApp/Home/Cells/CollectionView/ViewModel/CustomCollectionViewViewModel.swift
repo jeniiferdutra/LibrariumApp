@@ -9,9 +9,10 @@ import UIKit
 
 class CustomCollectionViewViewModel {
 
-    let imageURL: URL?
-    let title: String
-    let author: String
+    // public - podem ser públicos, pois a View precisa exibir isso
+    public let imageURL: URL?
+    public let title: String
+    public let author: String
     let fallbackImage = UIImage(named: "semcapa") ?? UIImage()
     
     init(volumeInfo: VolumeInfo?) {
