@@ -33,33 +33,48 @@ class HomeViewModel {
         self.delegate = delegate
     }
     
-    public func fetchRequest() {
-        let group = DispatchGroup()
-        var errorOccurred = false
+    public func fetchRequest(_ typeFetch: TypeFetch) {
         
-        for category in categories {
-            group.enter()
-            service.fetchBooksByCategory(for: category) { result in
-                switch result {
-                case .success(let librariumBook):
-                    let items = librariumBook.items ?? []
-                    self.booksByCategory[category] = items
-                case .failure(let error):
-                    print("Erro ao buscar \(category): \(error.localizedDescription)")
-                    errorOccurred = true
+        switch typeFetch {
+        case .mock:
+            service.loadCoinsFromLocalJSON { result, failure in
+                if let result {
+                    let items = result.items ?? []
+                    self.booksByCategory["mock"] = items
+                    self.delegate?.success()
+                } else {
+                    self.delegate?.error(message: failure?.localizedDescription ?? "Erro desconhecido")
                 }
-                group.leave()
+            }
+        case .request:
+            let group = DispatchGroup()
+            var errorOccurred = false
+            
+            for category in categories {
+                group.enter()
+                service.fetchBooksByCategory(for: category) { result in
+                    switch result {
+                    case .success(let librariumBook):
+                        let items = librariumBook.items ?? []
+                        self.booksByCategory[category] = items
+                    case .failure(let error):
+                        print("Erro ao buscar \(category): \(error.localizedDescription)")
+                        errorOccurred = true
+                    }
+                    group.leave()
+                }
+            }
+            
+            group.notify(queue: .main) { [weak self] in
+                guard let self = self else { return }
+                if errorOccurred {
+                    self.delegate?.error(message: "Erro ao buscar algumas categorias.")
+                } else {
+                    self.delegate?.success()
+                }
             }
         }
         
-        group.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
-            if errorOccurred {
-                self.delegate?.error(message: "Erro ao buscar algumas categorias.")
-            } else {
-                self.delegate?.success()
-            }
-        }
     }
     
     public func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {

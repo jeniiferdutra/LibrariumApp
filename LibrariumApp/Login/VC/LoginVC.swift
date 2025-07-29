@@ -11,9 +11,11 @@ class LoginVC: UIViewController {
     
     private var loginScreen: LoginScreen?
     private var viewModel: LoginViewModel = LoginViewModel()
+    private var alert: Alert?
     
     override func loadView() {
         loginScreen = LoginScreen()
+        alert = Alert(controller: self)
         view = loginScreen
     }
     
@@ -27,10 +29,30 @@ class LoginVC: UIViewController {
         loginScreen?.delegate(delegate: self)
         loginScreen?.configTextFields(delegate: self)
         viewModel.delegate(delegate: self)
-        loginScreen?.emailTextField.text = "test@test.com"
-        loginScreen?.passwordTextField.text = "123456"
+//        loginScreen?.emailTextField.text = "test@test.com"
+//        loginScreen?.passwordTextField.text = "123456"
+        isEnabledLoginButton(false)
     }
     
+    func validateTextField() {
+        if (loginScreen?.emailTextField.text ?? "").isValid(validType: .email) && (loginScreen?.passwordTextField.text ?? "").isValid(validType: .password) {
+            isEnabledLoginButton(true)
+        } else {
+            isEnabledLoginButton(false)
+        }
+    }
+    
+    func isEnabledLoginButton(_ isEnabled: Bool) {
+        if isEnabled {
+            loginScreen?.loginButton.setTitleColor(.black, for: .normal)
+            loginScreen?.loginButton.isEnabled = true
+            loginScreen?.loginButton.alpha = 1
+        } else {
+            loginScreen?.loginButton.setTitleColor(.black, for: .normal)
+            loginScreen?.loginButton.isEnabled = false
+            loginScreen?.loginButton.alpha = 0.4
+        }
+    }
 }
 
 extension LoginVC: LoginScreenProtocol {
@@ -82,6 +104,7 @@ extension LoginVC: UITextFieldDelegate {
                 break
             }
         }
+        validateTextField()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,7 +124,7 @@ extension LoginVC: LoginViewModelProtocol {
     }
     
     func errorGoogleLogin(errorMessage: String) {
-        Alert(controller: self).showAlertInformation(title: "Erro ao fazer login!", message: errorMessage)
+        alert?.showAlertInformation(title: "Erro ao fazer login", message: errorMessage)
     }
     
     func sucessLogin() {
@@ -111,7 +134,7 @@ extension LoginVC: LoginViewModelProtocol {
     }
     
     func errorLogin(errorMessage: String) {
-        Alert(controller: self).showAlertInformation(title: "Ops, error Login!", message: errorMessage)
+        alert?.showAlertInformation(title: "Falha no Login", message: errorMessage)
     }
 }
 

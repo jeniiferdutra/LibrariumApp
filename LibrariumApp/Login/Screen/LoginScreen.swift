@@ -96,7 +96,6 @@ class LoginScreen: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Sign In", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        btn.setTitleColor(.white, for: .normal)
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 25
         btn.backgroundColor = .lightGray

@@ -27,9 +27,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         dismissKeyboard()
         viewModel.delegate(delegate: self)
+        viewModel.fetchRequest(.request)
         homeScreen?.configSearchBarDelegate(delegate: self)
         homeScreen?.delegate(delegate: self)
-        viewModel.fetchRequest()
         homeScreen?.tableView.estimatedRowHeight = 420
         homeScreen?.tableView.rowHeight = UITableView.automaticDimension
     }

@@ -16,7 +16,12 @@ enum ErrorDetail: Error {
     case invalidStatusCode(code: Int)
 }
 
-class BookService {
+protocol BookServiceDelegate: GenericService {
+    func fetchBooksByCategory(for category: String, completion: @escaping (Result<BookData, Error>) -> Void)
+    func loadCoinsFromLocalJSON(completion: @escaping completion<BookData?>)
+}
+
+class BookService: BookServiceDelegate {
     
     func fetchBooksByCategory(for category: String, completion: @escaping (Result<BookData, Error>) -> Void) {
         let urlString = "https://www.googleapis.com/books/v1/volumes?q=subject:\(category)&key=AIzaSyBMx7mkzxROsxUkZPJY8TJkX51vCMNDBwo"
@@ -64,6 +69,20 @@ class BookService {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func loadCoinsFromLocalJSON(completion: @escaping completion<BookData?>) {
+        if let url = Bundle.main.url(forResource: "BooksData", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let book: BookData = try JSONDecoder().decode(BookData.self, from: data)
+                completion(book, nil)
+            } catch {
+                completion(nil, FileError.fileDecodingFailed(name: "BooksData", error))
+            }
+        } else {
+            completion(nil, FileError.fileNotFound(name: "BooksData"))
         }
     }
 }
