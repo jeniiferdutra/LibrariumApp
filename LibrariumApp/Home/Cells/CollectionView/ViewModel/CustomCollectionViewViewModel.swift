@@ -9,7 +9,6 @@ import UIKit
 
 class CustomCollectionViewViewModel {
 
-    // public - podem ser públicos, pois a View precisa exibir isso
     public let imageURL: URL?
     public let title: String
     public let author: String

@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
 
-    static let identifier: String = "HeaderTableViewCell"
+    static let identifier: String = String(describing: HeaderTableViewCell.self)
     private let homeScreen: HeaderTableViewCellScreen = HeaderTableViewCellScreen()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -45,8 +46,9 @@ extension HomeVC: HomeViewModelProtocol {
     }
     
     func error(message: String) {
-        print(#function)
-        //MARK: Criar um Alert
+        let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
 }
@@ -69,30 +71,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isSearching {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.setupCell(categoryName: "Result", books: searchResults)
-            cell.delegate = self
-            return cell
+            return configureCustomCell(for: tableView, at: indexPath, isSearch: true)
         } else {
             if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell else {
-                    return UITableViewCell()
-                }
-                return cell
+                return configureHeaderCell(for: tableView, at: indexPath)
             }
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            let index = indexPath.row - 1
-            let category = viewModel.getCategoryName(at: index)
-            let books = viewModel.getBooksForCategory(at: index)
-            cell.setupCell(categoryName: category, books: books)
-            cell.delegate = self
-            return cell
+            return configureCustomCell(for: tableView, at: indexPath, isSearch: false)
         }
     }
     
@@ -122,6 +106,12 @@ extension HomeVC: UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.searchResults = results
                     self.homeScreen?.tableView.reloadData()
+                    if results.isEmpty {
+                        Alert(controller: self).showAlertInformation(
+                            title: "No results",
+                            message: "We couldn't find any books for \"\(searchText)\"."
+                        )
+                    }
                 }
             }
         }
@@ -129,5 +119,41 @@ extension HomeVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+}
+
+// MARK: - Private Helpers
+
+private extension HomeVC {
+    
+    func configureHeaderCell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: HeaderTableViewCell.identifier,
+            for: indexPath
+        ) as? HeaderTableViewCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    func configureCustomCell(for tableView: UITableView, at indexPath: IndexPath, isSearch: Bool) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableViewCell.identifier,
+            for: indexPath
+        ) as? CustomTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        if isSearch {
+            cell.setupCell(categoryName: "Result", books: searchResults)
+        } else {
+            let index = indexPath.row - 1
+            let category = viewModel.getCategoryName(at: index)
+            let books = viewModel.getBooksForCategory(at: index)
+            cell.setupCell(categoryName: category, books: books)
+        }
+        
+        cell.delegate = self
+        return cell
     }
 }

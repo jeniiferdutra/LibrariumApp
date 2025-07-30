@@ -14,7 +14,7 @@ protocol CustomTableViewCellDelegate: AnyObject {
 class CustomTableViewCell: UITableViewCell {
     
     public weak var delegate: CustomTableViewCellDelegate?
-    static let identifier: String = "CustomTableViewCell"
+    static let identifier: String = String(describing: CustomTableViewCell.self)
     
     private let homeScreen: CustomTableViewCellScreen = CustomTableViewCellScreen()
     private var books: [Item] = []

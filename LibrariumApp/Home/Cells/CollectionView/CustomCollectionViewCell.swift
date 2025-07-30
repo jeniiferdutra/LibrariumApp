@@ -10,7 +10,7 @@ import AlamofireImage
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "CustomCollectionViewCell"
+    static let identifier: String = String(describing: CustomCollectionViewCell.self)
     
     private let homeScreen: CustomCollectionViewCellScreen = CustomCollectionViewCellScreen()
     
@@ -31,15 +31,5 @@ class CustomCollectionViewCell: UICollectionViewCell {
     public func setupCell(with viewModel: CustomCollectionViewViewModel) {
         homeScreen.apply(viewModel: viewModel)
         homeScreen.configureAccessibility(with: viewModel.title)
-    }
-    
-    private func loadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error == nil,
-                  let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                self.homeScreen.booksImageView.image = image
-            }
-        }.resume()
     }
 }

@@ -1,0 +1,5 @@
+    let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    present(alert, animated: true)    let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    present(alert, animated: true)
