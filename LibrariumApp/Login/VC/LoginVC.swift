@@ -19,18 +19,17 @@ class LoginVC: UIViewController {
         view = loginScreen
     }
     
-    override func viewWillAppear(_ animated: Bool) { // ocultar a navigation
+    override func viewWillAppear(_ animated: Bool) {// ocultar a navigation
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dismissKeyboard()
+        viewModel.delegate(delegate: self)
         loginScreen?.delegate(delegate: self)
         loginScreen?.configTextFields(delegate: self)
-        viewModel.delegate(delegate: self)
-//        loginScreen?.emailTextField.text = "test@test.com"
-//        loginScreen?.passwordTextField.text = "123456"
+        dismissKeyboard()
         isEnabledLoginButton(false)
     }
     
@@ -128,7 +127,7 @@ extension LoginVC: LoginViewModelProtocol {
     }
     
     func sucessLogin() {
-        let vc: HomeVC = HomeVC()
+        let vc: HomeViewController = HomeViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

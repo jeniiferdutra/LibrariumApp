@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  HomeViewController.swift
 //  LibrariumApp
 //
 //  Created by Jenifer Rocha on 16/04/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeViewController: UIViewController {
     
     private var homeScreen: HomeScreen?
     private var viewModel: HomeViewModel = HomeViewModel()
@@ -37,7 +37,7 @@ class HomeVC: UIViewController {
     
 }
 
-extension HomeVC: HomeViewModelProtocol {
+extension HomeViewController: HomeViewModelProtocol {
     func success() {
         DispatchQueue.main.async {
             self.homeScreen?.configTableView(delegate: self, dataSource: self)
@@ -53,14 +53,28 @@ extension HomeVC: HomeViewModelProtocol {
     
 }
 
-extension HomeVC: HomeScreenProtocol {
+extension HomeViewController: HomeScreenProtocol {
     func tappedLogoutButton() {
-        dismiss(animated: true)
+        viewModel.logout { result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    let loginVC = LoginVC()
+                    let nav = UINavigationController(rootViewController: loginVC)
+                    if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = scene.windows.first {
+                        window.rootViewController = nav
+                        window.makeKeyAndVisible()
+                    }
+                }
+            case .failure(let error):
+                print(#function)
+            }
+        }
     }
-    
 }
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching {
             return 1
@@ -85,7 +99,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeVC: CustomTableViewCellDelegate {
+extension HomeViewController: CustomTableViewCellDelegate {
     func didSelectBook(_ book: Item) {
         guard let id = book.id else { return }
         let viewModel = BookDetailViewModel(volumeId: id)
@@ -94,7 +108,7 @@ extension HomeVC: CustomTableViewCellDelegate {
     }
 }
 
-extension HomeVC: UISearchBarDelegate {
+extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             isSearching = false
@@ -124,7 +138,7 @@ extension HomeVC: UISearchBarDelegate {
 
 // MARK: - Private Helpers
 
-private extension HomeVC {
+private extension HomeViewController {
     
     func configureHeaderCell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(

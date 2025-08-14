@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol HomeViewModelProtocol: AnyObject {
     func success()
@@ -107,6 +108,15 @@ class HomeViewModel {
     public func getBooksForCategory(at index: Int) -> [Item] {
         let category = categories[index]
         return booksByCategory[category] ?? []
+    }
+    
+    public func logout(completion: @escaping (Result<Void, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
     }
 }
 
