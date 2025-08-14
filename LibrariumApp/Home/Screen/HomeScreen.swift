@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol HomeScreenProtocol: AnyObject {
+    func tappedLogoutButton()
+}
+
 class HomeScreen: UIView {
+    
+    private weak var delegate: HomeScreenProtocol?
+    
+    public func delegate(delegate: HomeScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -22,35 +32,42 @@ class HomeScreen: UIView {
         return imageView
     }()
     
+    lazy var logoutButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Exit", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        btn.setTitleColor(.black, for: .normal)
+        btn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+        btn.tintColor = .black
+        btn.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func tappedLogoutButton() {
+        self.delegate?.tappedLogoutButton()
+    }
+    
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
         search.clipsToBounds = true
         search.layer.cornerRadius = 20
-        
-        // Remover backgroundImage para garantir que o fundo seja branco
-        search.backgroundImage = UIImage()
-        search.barTintColor = UIColor(named: "appBackGroud")
-        // Ajustar o fundo do campo de texto dentro da searchBar
-        if let textField = search.value(forKey: "searchField") as? UITextField {
-            textField.backgroundColor = .white
-            textField.textColor = .black
-            textField.attributedPlaceholder = NSAttributedString(
-                string: "Search",
-                attributes: [.foregroundColor: UIColor.lightGray]
-            )
-        }
-        
+        search.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        search.backgroundColor = .appBackGroud
+        search.placeholder = "Search"
         return search
     }()
     
     lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.separatorStyle = .none
-        table.backgroundColor = .appBackGroud
-        table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
-        return table
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .appBackGroud
+        tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifier)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.bounces = false
+        return tableView
     }()
     
     public func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
@@ -65,29 +82,36 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appBackGroud
-        addSubview(logoImageView)
-        addSubview(searchBar)
-        addSubview(tableView)
+        addViews()
         configElements()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func addViews() {
+        addSubview(logoImageView)
+        addSubview(logoutButton)
+        addSubview(searchBar)
+        addSubview(tableView)
+    }
 
     private func configElements() {
         NSLayoutConstraint.activate([
-            
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 115),
-            logoImageView.widthAnchor.constraint(equalToConstant: 260),
-
+            logoImageView.heightAnchor.constraint(equalToConstant: 100),
+            logoImageView.widthAnchor.constraint(equalToConstant: 100),
+            
+            logoutButton.topAnchor.constraint(equalTo: logoImageView.topAnchor),
+            logoutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            
             searchBar.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 40),
-
+            
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),

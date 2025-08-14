@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "CustomCollectionViewCell"
+    static let identifier: String = String(describing: CustomCollectionViewCell.self)
     
     private let homeScreen: CustomCollectionViewCellScreen = CustomCollectionViewCellScreen()
     
@@ -17,7 +18,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configScreen()
     }
-       
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -27,25 +28,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         homeScreen.pin(to: contentView)
     }
     
-    public func setupCell(with book: VolumeInfo) {
-        if let urlString = book.imageLinks?.thumbnail?
-                .replacingOccurrences(of: "http://", with: "https://"),
-           let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: encodedString) {
-            loadImage(from: url)
-        } else {
-            self.homeScreen.bookImageView.image = UIImage(named: "semcapa")
-        }
-        
-    }
-    
-    private func loadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error == nil,
-                  let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                self.homeScreen.bookImageView.image = image
-            }
-        }.resume()
+    public func setupCell(with viewModel: CustomCollectionViewViewModel) {
+        homeScreen.apply(viewModel: viewModel)
+        homeScreen.configureAccessibility(with: viewModel.title)
     }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 protocol LoginScreenProtocol: AnyObject {
     func tappedLoginButton()
+    func tappedGoogleButton()
+    func tappedGithubButton()
     func tappedRegisterButton()
 }
 
@@ -51,12 +53,12 @@ class LoginScreen: UIView {
         email.translatesAutoresizingMaskIntoConstraints = false
         email.autocorrectionType = .no
         email.backgroundColor = .white
-        email.borderStyle = .none
         email.borderStyle = .roundedRect
         email.keyboardType = .emailAddress
         email.placeholder = "Your email"
         email.textColor = .darkGray
-        email.layer.borderWidth = 0.2
+        email.layer.borderWidth = 1
+        email.layer.borderColor = UIColor.white.cgColor
         email.clipsToBounds = true
         email.layer.cornerRadius = 10
         return email
@@ -80,7 +82,8 @@ class LoginScreen: UIView {
         password.placeholder = "Your Password"
         password.isSecureTextEntry = true
         password.textColor = .darkGray
-        password.layer.borderWidth = 0.2
+        password.layer.borderWidth = 1
+        password.layer.borderColor = UIColor.white.cgColor
         password.clipsToBounds = true
         password.layer.cornerRadius = 10
         password.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: 0))
@@ -93,7 +96,6 @@ class LoginScreen: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Sign In", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        btn.setTitleColor(.white, for: .normal)
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 25
         btn.backgroundColor = .lightGray
@@ -103,6 +105,41 @@ class LoginScreen: UIView {
     
     @objc func tappedLoginButton() {
         self.delegate?.tappedLoginButton()
+    }
+    
+    lazy var signInLabel: UILabel = {
+        let signIn = UILabel()
+        signIn.translatesAutoresizingMaskIntoConstraints = false
+        signIn.text = "Or sign in with"
+        signIn.textColor = .black
+        signIn.font = UIFont.systemFont(ofSize: 15)
+        return signIn
+    }()
+    
+    lazy var googleButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tintColor = .lightGray
+        btn.setImage(UIImage(named: "google")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(tappedGoogleButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func tappedGoogleButton() {
+        self.delegate?.tappedGoogleButton()
+    }
+    
+    lazy var githubButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tintColor = .lightGray
+        btn.setImage(UIImage(named: "github")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.addTarget(self, action: #selector(tappedGithubButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func tappedGithubButton() {
+        self.delegate?.tappedGithubButton()
     }
     
     lazy var registerLabel: UILabel = {
@@ -147,6 +184,9 @@ class LoginScreen: UIView {
         addSubview(passwordLabel)
         addSubview(passwordTextField)
         addSubview(loginButton)
+        addSubview(signInLabel)
+        addSubview(googleButton)
+        addSubview(githubButton)
         addSubview(registerLabel)
         addSubview(registerButton)
     }
@@ -183,7 +223,20 @@ class LoginScreen: UIView {
             loginButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
             loginButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
             
-            registerLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 50),
+            signInLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+            signInLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            googleButton.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 15),
+            googleButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -30),
+            googleButton.heightAnchor.constraint(equalToConstant: 45),
+            googleButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            githubButton.topAnchor.constraint(equalTo: googleButton.topAnchor),
+            githubButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 30),
+            githubButton.heightAnchor.constraint(equalToConstant: 45),
+            githubButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            registerLabel.topAnchor.constraint(equalTo: googleButton.bottomAnchor, constant: 50),
             registerLabel.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
             
             registerButton.topAnchor.constraint(equalTo: registerLabel.bottomAnchor),

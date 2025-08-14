@@ -6,114 +6,117 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol HomeViewModelProtocol: AnyObject {
     func success()
-    func error()
+    func error(message: String)
 }
 
 class HomeViewModel {
     
+    // MARK: - Private Properties
     private var service: BookService = BookService()
-    private var categories: [String] = []
-    private var booksByCategory: [String: [VolumeInfo]] = [:]
-    private var searchBookData: BookData?
-    public var isSearching: Bool = false
-    private var filteredBooks: [VolumeInfo] = []
+    private var booksByCategory: [String: [Item]] = [:]
+    private var searchResults: [Item] = []
+    private let categories = [
+        "romance", "fantasy", "horror", "science_fiction", "history",
+        "biography", "children", "young_adult", "mystery", "thriller",
+        "adventure", "classics", "comics", "poetry", "art",
+        "music", "philosophy", "religion", "science", "technology",
+        "travel", "cookbooks", "self_help", "health", "sports"
+    ]
     
     private weak var delegate: HomeViewModelProtocol?
     
+    // MARK: - Public Methods
     public func delegate(delegate: HomeViewModelProtocol?) {
         self.delegate = delegate
     }
     
-    public var heightForRowAt: CGFloat {
-        return 290
-    }
-    
-    init() {
-        fetchCategories() // Carregar as categorias ao inicializar
-    }
-    
-    private func fetchCategories() {
-        let categoryUrls = [
-            "horror",
-            "romance",
-            "fantasy",
-            "adventure",
-            "Juvenile Fiction",
-            "mystery",
-            "Comics & Graphic Novels",
-            //"Science",
-        ]
+    public func fetchRequest(_ typeFetch: TypeFetch) {
         
-        // Grupo para esperar todas as requisições assíncronas
-        let group = DispatchGroup()
-        var fetchedCategories: [String] = [] // Guardar as categorias que foram carregadas
-        
-        for url in categoryUrls {
-            group.enter()
-            service.getBooksByCategory(category: url) { bookData, error in
-                let category = url.capitalized  // "Romance", "Horror", etc.
-                if self.booksByCategory[category] == nil {
-                    self.booksByCategory[category] = []
+        switch typeFetch {
+        case .mock:
+            service.loadCoinsFromLocalJSON { result, failure in
+                if let result {
+                    let items = result.items ?? []
+                    self.booksByCategory["mock"] = items
+                    self.delegate?.success()
+                } else {
+                    self.delegate?.error(message: failure?.localizedDescription ?? "Erro desconhecido")
                 }
-                if let books = bookData?.items?.compactMap({ $0.volumeInfo }) {
-                    self.booksByCategory[category]?.append(contentsOf: books)
+            }
+        case .request:
+            let group = DispatchGroup()
+            var errorOccurred = false
+            
+            for category in categories {
+                group.enter()
+                service.fetchBooksByCategory(for: category) { result in
+                    switch result {
+                    case .success(let librariumBook):
+                        let items = librariumBook.items ?? []
+                        self.booksByCategory[category] = items
+                    case .failure(let error):
+                        print("Erro ao buscar \(category): \(error.localizedDescription)")
+                        errorOccurred = true
+                    }
+                    group.leave()
                 }
-                if !fetchedCategories.contains(category) {
-                    fetchedCategories.append(category)
+            }
+            
+            group.notify(queue: .main) { [weak self] in
+                guard let self = self else { return }
+                if errorOccurred {
+                    self.delegate?.error(message: "Erro ao buscar algumas categorias.")
+                } else {
+                    self.delegate?.success()
                 }
-                group.leave()
             }
         }
         
-        // Quando todas as requisições terminarem, atualizar o modelo de dados e a UI
-        group.notify(queue: .main) {
-            // Remover duplicatas, caso existam, e atribuir às categorias
-            self.categories = Array(Set(fetchedCategories))
-            self.delegate?.success() // Chama o sucesso quando os dados estiverem prontos
+    }
+    
+    public func searchBooks(with query: String, completion: @escaping ([Item]) -> Void) {
+        service.searchBooks(with: query) { [weak self] result in
+            switch result {
+            case .success(let books):
+                let items = books.items ?? []
+                self?.searchResults = items
+                completion(items)
+            case .failure(let error):
+                print("Erro na busca: \(error.localizedDescription)")
+                completion([])
+            }
         }
+        
     }
     
-    public func numberOfCategories() -> Int {
-        return isSearching ? 1 : categories.count
+    public func getSearchResults() -> [Item] {
+        return searchResults
     }
     
-    func category(at index: Int) -> String {
-        return isSearching ? "Resultado da Busca" : categories[index]
+    public var numberOfSections: Int {
+        return categories.count
     }
     
-    public func numberOfItemsInSection(for category: String) -> [VolumeInfo] { // acessar os livros por categoria
+    public func getCategoryName(at index: Int) -> String {
+        return categories[index]
+    }
+    
+    public func getBooksForCategory(at index: Int) -> [Item] {
+        let category = categories[index]
         return booksByCategory[category] ?? []
     }
     
-    public var sizeForItemAt: CGSize {
-            return CGSize(width: 150, height: 230)
+    public func logout(completion: @escaping (Result<Void, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
         }
-    
-    public func filterSearchText(_ text: String) {
-        if text.isEmpty {
-            isSearching = false
-            filteredBooks = []
-        } else {
-            isSearching = true
-            filteredBooks = booksByCategory
-                .flatMap { $0.value } // junta todos os livros de todas as categorias
-                .filter { $0.title?.lowercased().contains(text.lowercased()) ?? false }
-        }
-    }
-    
-    public func numberOfFilteredBooks() -> Int {
-        return filteredBooks.count
-    }
-    
-    public func filteredBook(at index: Int) -> VolumeInfo {
-        return filteredBooks[index]
-    }
-    
-    public func books(for category: String) -> [VolumeInfo] {
-        return booksByCategory[category] ?? []
     }
 }
 

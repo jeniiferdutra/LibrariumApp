@@ -1,0 +1,133 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 2,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "vK_SAQAACAAJ",
+      "etag": "dvMpSI9gnco",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/vK_SAQAACAAJ",
+      "volumeInfo": {
+        "title": "Wahrheit, Zeit und Freiheit",
+        "subtitle": "Einführung in eine philosophische Theorie",
+        "authors": [
+          "Anton Friedrich Koch"
+        ],
+        "publishedDate": "2006",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "3897856018"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9783897856011"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 188,
+        "printType": "BOOK",
+        "categories": [
+          "Category"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=vK_SAQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=vK_SAQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "de",
+        "previewLink": "http://books.google.com.br/books?id=vK_SAQAACAAJ&dq=subject:%5C(category)&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=vK_SAQAACAAJ&dq=subject:%5C(category)&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Wahrheit_Zeit_und_Freiheit.html?hl=&id=vK_SAQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=vK_SAQAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "BLzp0AEACAAJ",
+      "etag": "fGJNOEhwMHI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/BLzp0AEACAAJ",
+      "volumeInfo": {
+        "title": "试论汉维翻译中的移位法",
+        "publishedDate": "2013",
+        "description": "Translocation refers to the skill to relocate sentence members or clauses in inverted order in translating . The article, from the perspective of translation theory and practice, deals with the type, definition, premise and category of translocation.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:1456389841"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 0,
+        "printType": "BOOK",
+        "categories": [
+          "Category"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "zh-CN",
+        "previewLink": "http://books.google.com.br/books?id=BLzp0AEACAAJ&dq=subject:%5C(category)&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com.br/books?id=BLzp0AEACAAJ&dq=subject:%5C(category)&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/%E8%AF%95%E8%AE%BA%E6%B1%89%E7%BB%B4%E7%BF%BB%E8%AF%91%E4%B8%AD%E7%9A%84%E7%A7%BB%E4%BD%8D%E6%B3%95.html?hl=&id=BLzp0AEACAAJ"
+      },
+      "saleInfo": {
+        "country": "BR",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "BR",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=BLzp0AEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}
